@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Partners for Members -->
+        <record id="partner_member_01" model="res.partner">
+            <field name="name">Ahmed Hassan</field>
+            <field name="email">ahmed.hassan@library.com</field>
+            <field name="phone">+20 100 1234567</field>
+        </record>
+        
+        <record id="partner_member_02" model="res.partner">
+            <field name="name">Sara Mohamed</field>
+            <field name="email">sara.mohamed@library.com</field>
+            <field name="phone">+20 101 2345678</field>
+        </record>
+        
+        <record id="partner_member_03" model="res.partner">
+            <field name="name">Khaled Ibrahim</field>
+            <field name="email">khaled.ibrahim@library.com</field>
+            <field name="phone">+20 102 3456789</field>
+        </record>
+        
+        <record id="partner_member_04" model="res.partner">
+            <field name="name">Mona Ali</field>
+            <field name="email">mona.ali@library.com</field>
+            <field name="phone">+20 103 4567890</field>
+        </record>
+        
+        <record id="partner_member_05" model="res.partner">
+            <field name="name">Omar Saeed</field>
+            <field name="email">omar.saeed@library.com</field>
+            <field name="phone">+20 104 5678901</field>
+        </record>
+        
+        <record id="partner_member_06" model="res.partner">
+            <field name="name">Laila Fahmi</field>
+            <field name="email">laila.fahmi@library.com</field>
+            <field name="phone">+20 105 6789012</field>
+        </record>
+        
+        <record id="partner_member_07" model="res.partner">
+            <field name="name">Youssef Kamal</field>
+            <field name="email">youssef.kamal@library.com</field>
+            <field name="phone">+20 106 7890123</field>
+        </record>
+        
+        <record id="partner_member_08" model="res.partner">
+            <field name="name">Fatma Nasser</field>
+            <field name="email">fatma.nasser@library.com</field>
+            <field name="phone">+20 107 8901234</field>
+        </record>
+        
+        <record id="partner_member_09" model="res.partner">
+            <field name="name">Mahmoud Salah</field>
+            <field name="email">mahmoud.salah@library.com</field>
+            <field name="phone">+20 108 9012345</field>
+        </record>
+        
+        <record id="partner_member_10" model="res.partner">
+            <field name="name">Nadia Abdel-Latif</field>
+            <field name="email">nadia.abdel@library.com</field>
+            <field name="phone">+20 109 0123456</field>
+        </record>
+        
+        <record id="partner_member_11" model="res.partner">
+            <field name="name">Tarek Mansour</field>
+            <field name="email">tarek.mansour@library.com</field>
+            <field name="phone">+20 110 1234567</field>
+        </record>
+        
+        <record id="partner_member_12" model="res.partner">
+            <field name="name">Heba Zaki</field>
+            <field name="email">heba.zaki@library.com</field>
+            <field name="phone">+20 111 2345678</field>
+        </record>
+        
+        <record id="partner_member_13" model="res.partner">
+            <field name="name">Amr Fouad</field>
+            <field name="email">amr.fouad@library.com</field>
+            <field name="phone">+20 112 3456789</field>
+        </record>
+        
+        <record id="partner_member_14" model="res.partner">
+            <field name="name">Dina Hamdy</field>
+            <field name="email">dina.hamdy@library.com</field>
+            <field name="phone">+20 113 4567890</field>
+        </record>
+        
+        <record id="partner_member_15" model="res.partner">
+            <field name="name">Hassan Saleh</field>
+            <field name="email">hassan.saleh@library.com</field>
+            <field name="phone">+20 114 5678901</field>
+        </record>
+        
+        <record id="partner_member_16" model="res.partner">
+            <field name="name">Rana Mustafa</field>
+            <field name="email">rana.mustafa@library.com</field>
+            <field name="phone">+20 115 6789012</field>
+        </record>
+        
+        <record id="partner_member_17" model="res.partner">
+            <field name="name">Ali Abdallah</field>
+            <field name="email">ali.abdallah@library.com</field>
+            <field name="phone">+20 116 7890123</field>
+        </record>
+        
+        <record id="partner_member_18" model="res.partner">
+            <field name="name">Yasmin Sherif</field>
+            <field name="email">yasmin.sherif@library.com</field>
+            <field name="phone">+20 117 8901234</field>
+        </record>
+        
+        <record id="partner_member_19" model="res.partner">
+            <field name="name">Ibrahim Youssef</field>
+            <field name="email">ibrahim.youssef@library.com</field>
+            <field name="phone">+20 118 9012345</field>
+        </record>
+        
+        <record id="partner_member_20" model="res.partner">
+            <field name="name">Noha Tamer</field>
+            <field name="email">noha.tamer@library.com</field>
+            <field name="phone">+20 119 0123456</field>
+        </record>
+        
+        <!-- Library Members -->
+        <record id="member_01" model="library.member">
+            <field name="partner_id" ref="partner_member_01"/>
+            <field name="membership_date">2024-01-15</field>
+            <field name="membership_expiry_date">2025-01-15</field>
+            <field name="membership_type">student</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">5</field>
+        </record>
+        
+        <record id="member_02" model="library.member">
+            <field name="partner_id" ref="partner_member_02"/>
+            <field name="membership_date">2024-02-20</field>
+            <field name="membership_expiry_date">2025-02-20</field>
+            <field name="membership_type">teacher</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">10</field>
+        </record>
+        
+        <record id="member_03" model="library.member">
+            <field name="partner_id" ref="partner_member_03"/>
+            <field name="membership_date">2024-03-10</field>
+            <field name="membership_expiry_date">2025-03-10</field>
+            <field name="membership_type">public</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">3</field>
+        </record>
+        
+        <record id="member_04" model="library.member">
+            <field name="partner_id" ref="partner_member_04"/>
+            <field name="membership_date">2024-01-05</field>
+            <field name="membership_expiry_date">2025-01-05</field>
+            <field name="membership_type">staff</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">8</field>
+        </record>
+        
+        <record id="member_05" model="library.member">
+            <field name="partner_id" ref="partner_member_05"/>
+            <field name="membership_date">2024-04-12</field>
+            <field name="membership_expiry_date">2025-04-12</field>
+            <field name="membership_type">student</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">5</field>
+        </record>
+        
+        <record id="member_06" model="library.member">
+            <field name="partner_id" ref="partner_member_06"/>
+            <field name="membership_date">2023-06-18</field>
+            <field name="membership_expiry_date">2024-06-18</field>
+            <field name="membership_type">public</field>
+            <field name="state">expired</field>
+            <field name="max_books_allowed">3</field>
+        </record>
+        
+        <record id="member_07" model="library.member">
+            <field name="partner_id" ref="partner_member_07"/>
+            <field name="membership_date">2024-05-22</field>
+            <field name="membership_expiry_date">2025-05-22</field>
+            <field name="membership_type">teacher</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">10</field>
+        </record>
+        
+        <record id="member_08" model="library.member">
+            <field name="partner_id" ref="partner_member_08"/>
+            <field name="membership_date">2024-02-14</field>
+            <field name="membership_expiry_date">2025-02-14</field>
+            <field name="membership_type">student</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">5</field>
+        </record>
+        
+        <record id="member_09" model="library.member">
+            <field name="partner_id" ref="partner_member_09"/>
+            <field name="membership_date">2024-07-30</field>
+            <field name="membership_expiry_date">2025-07-30</field>
+            <field name="membership_type">public</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">3</field>
+        </record>
+        
+        <record id="member_10" model="library.member">
+            <field name="partner_id" ref="partner_member_10"/>
+            <field name="membership_date">2024-08-05</field>
+            <field name="membership_expiry_date">2025-08-05</field>
+            <field name="membership_type">staff</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">8</field>
+        </record>
+        
+        <record id="member_11" model="library.member">
+            <field name="partner_id" ref="partner_member_11"/>
+            <field name="membership_date">2024-09-12</field>
+            <field name="membership_expiry_date">2025-09-12</field>
+            <field name="membership_type">student</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">5</field>
+        </record>
+        
+        <record id="member_12" model="library.member">
+            <field name="partner_id" ref="partner_member_12"/>
+            <field name="membership_date">2024-03-25</field>
+            <field name="membership_expiry_date">2025-03-25</field>
+            <field name="membership_type">public</field>
+            <field name="state">suspended</field>
+            <field name="max_books_allowed">3</field>
+        </record>
+        
+        <record id="member_13" model="library.member">
+            <field name="partner_id" ref="partner_member_13"/>
+            <field name="membership_date">2024-10-08</field>
+            <field name="membership_expiry_date">2025-10-08</field>
+            <field name="membership_type">teacher</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">10</field>
+        </record>
+        
+        <record id="member_14" model="library.member">
+            <field name="partner_id" ref="partner_member_14"/>
+            <field name="membership_date">2024-11-17</field>
+            <field name="membership_expiry_date">2025-11-17</field>
+            <field name="membership_type">student</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">5</field>
+        </record>
+        
+        <record id="member_15" model="library.member">
+            <field name="partner_id" ref="partner_member_15"/>
+            <field name="membership_date">2024-06-03</field>
+            <field name="membership_expiry_date">2025-06-03</field>
+            <field name="membership_type">public</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">3</field>
+        </record>
+        
+        <record id="member_16" model="library.member">
+            <field name="partner_id" ref="partner_member_16"/>
+            <field name="membership_date">2024-12-01</field>
+            <field name="membership_expiry_date">2025-12-01</field>
+            <field name="membership_type">staff</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">8</field>
+        </record>
+        
+        <record id="member_17" model="library.member">
+            <field name="partner_id" ref="partner_member_17"/>
+            <field name="membership_date">2024-04-20</field>
+            <field name="membership_expiry_date">2025-04-20</field>
+            <field name="membership_type">student</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">5</field>
+        </record>
+        
+        <record id="member_18" model="library.member">
+            <field name="partner_id" ref="partner_member_18"/>
+            <field name="membership_date">2024-07-14</field>
+            <field name="membership_expiry_date">2025-07-14</field>
+            <field name="membership_type">public</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">3</field>
+        </record>
+        
+        <record id="member_19" model="library.member">
+            <field name="partner_id" ref="partner_member_19"/>
+            <field name="membership_date">2024-05-09</field>
+            <field name="membership_expiry_date">2025-05-09</field>
+            <field name="membership_type">teacher</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">10</field>
+        </record>
+        
+        <record id="member_20" model="library.member">
+            <field name="partner_id" ref="partner_member_20"/>
+            <field name="membership_date">2024-08-21</field>
+            <field name="membership_expiry_date">2025-08-21</field>
+            <field name="membership_type">student</field>
+            <field name="state">active</field>
+            <field name="max_books_allowed">5</field>
+        </record>
+        
+    </data>
+</odoo>

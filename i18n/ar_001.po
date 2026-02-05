@@ -1,0 +1,2287 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* library
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-04 11:47+0000\n"
+"PO-Revision-Date: 2026-02-04 11:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: library
+#: model:ir.actions.report,print_report_name:library.action_report_library_member_card
+msgid ""
+"'Card - %s' % (object.card_number) if len(object) == 1 else 'Member Cards'"
+msgstr "'بطاقة - %s' % (object.card_number) if len(object) == 1 else 'بطاقات الأعضاء'"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__type
+msgid ""
+"- Contact: Use this to organize the contact details of employees of a given company (e.g. CEO, CFO, ...).\n"
+"- Invoice Address: Preferred address for all invoices. Selected by default when you invoice an order that belongs to this company.\n"
+"- Delivery Address: Preferred address for all deliveries. Selected by default when you deliver an order that belongs to this company.\n"
+"- Other: Other address for the company (e.g. subsidiary, ...)"
+msgstr ""
+"- جهة اتصال: استخدم هذا لتنظيم تفاصيل الاتصال بموظفي شركة معينة (مثل الرئيس التنفيذي، المدير المالي، ...).\n"
+"- عنوان الفاتورة: العنوان المفضل لجميع الفواتير. يتم تحديده افتراضيًا عند إصدار فاتورة لطلب ينتمي لهذه الشركة.\n"
+"- عنوان التوصيل: العنوان المفضل لجميع التوصيلات. يتم تحديده افتراضيًا عند توصيل طلب ينتمي لهذه الشركة.\n"
+"- آخر: عنوان آخر للشركة (مثل فرع، ...)"
+
+#. module: library
+#: model:mail.template,body_html:library.mail_template_overdue_notification
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-out=\"object.member_id.name or ''\">Member</t>,<br><br>\n"
+"                        The following books borrowed by you are now <strong>OVERDUE</strong>:<br>\n"
+"                        <ul>\n"
+"                            <t t-foreach=\"object.borrowing_line_ids\" t-as=\"line\">\n"
+"                                <li><strong><t t-out=\"line.book_id.title or ''\">Book Title</t></strong></li>\n"
+"                            </t>\n"
+"                        </ul>\n"
+"                        <br>\n"
+"                        Due Date was: <strong><t t-out=\"object.date_expected_return or ''\">Return Date</t></strong>.\n"
+"                        <br>\n"
+"                        Late fees may apply. Please return them immediately.\n"
+"                        <br><br>\n"
+"                        Thank you,<br>\n"
+"                        Library Management Team\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        عزيزي <t t-out=\"object.member_id.name or ''\">العضو</t>,<br><br>\n"
+"                        الكتب التالية التي استعرتها <strong>تأخرت الآن</strong>:<br>\n"
+"                        <ul>\n"
+"                            <t t-foreach=\"object.borrowing_line_ids\" t-as=\"line\">\n"
+"                                <li><strong><t t-out=\"line.book_id.title or ''\">عنوان الكتاب</t></strong></li>\n"
+"                            </t>\n"
+"                        </ul>\n"
+"                        <br>\n"
+"                        كان تاريخ الاستحقاق: <strong><t t-out=\"object.date_expected_return or ''\">تاريخ الإرجاع</t></strong>.\n"
+"                        <br>\n"
+"                        قد تطبق غرامات التأخير. يرجى إرجاعها فوراً.\n"
+"                        <br><br>\n"
+"                        شكراً لك،<br>\n"
+"                        فريق إدارة المكتبة\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: library
+#: model:mail.template,body_html:library.mail_template_borrowing_confirmation
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-out=\"object.member_id.name or ''\">Member</t>,<br><br>\n"
+"                        This is a confirmation that you have borrowed the following books on <t t-out=\"object.date_borrowed or ''\">Date</t>:<br>\n"
+"                        <ul>\n"
+"                            <t t-foreach=\"object.borrowing_line_ids\" t-as=\"line\">\n"
+"                                <li><strong><t t-out=\"line.book_id.title or ''\">Book Title</t></strong></li>\n"
+"                            </t>\n"
+"                        </ul>\n"
+"                        <br>\n"
+"                        Please return them by <strong><t t-out=\"object.date_expected_return or ''\">Return Date</t></strong> to avoid any late fees.\n"
+"                        <br><br>\n"
+"                        Thank you,<br>\n"
+"                        Library Management Team\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        عزيزي <t t-out=\"object.member_id.name or ''\">العضو</t>,<br><br>\n"
+"                        هذا تأكيد بأنك استعرت الكتب التالية في <t t-out=\"object.date_borrowed or ''\">التاريخ</t>:<br>\n"
+"                        <ul>\n"
+"                            <t t-foreach=\"object.borrowing_line_ids\" t-as=\"line\">\n"
+"                                <li><strong><t t-out=\"line.book_id.title or ''\">عنوان الكتاب</t></strong></li>\n"
+"                            </t>\n"
+"                        </ul>\n"
+"                        <br>\n"
+"                        يرجى إرجاعها بحلول <strong><t t-out=\"object.date_expected_return or ''\">تاريخ الإرجاع</t></strong> لتجنب أي غرامات تأخير.\n"
+"                        <br><br>\n"
+"                        شكراً لك،<br>\n"
+"                        فريق إدارة المكتبة\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: library
+#: model:mail.template,body_html:library.mail_template_return_reminder
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-out=\"object.member_id.name or ''\">Member</t>,<br><br>\n"
+"                        This is a gentle reminder that the following books are due for return on <strong><t t-out=\"object.date_expected_return or ''\">Return Date</t></strong>:<br>\n"
+"                        <ul>\n"
+"                            <t t-foreach=\"object.borrowing_line_ids\" t-as=\"line\">\n"
+"                                <li><strong><t t-out=\"line.book_id.title or ''\">Book Title</t></strong></li>\n"
+"                            </t>\n"
+"                        </ul>\n"
+"                        <br>\n"
+"                        Please return them on time.\n"
+"                        <br><br>\n"
+"                        Thank you,<br>\n"
+"                        Library Management Team\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        عزيزي <t t-out=\"object.member_id.name or ''\">العضو</t>,<br><br>\n"
+"                        هذا تذكير لطيف بأن الكتب التالية مستحقة الإرجاع في <strong><t t-out=\"object.date_expected_return or ''\">تاريخ الإرجاع</t></strong>:<br>\n"
+"                        <ul>\n"
+"                            <t t-foreach=\"object.borrowing_line_ids\" t-as=\"line\">\n"
+"                                <li><strong><t t-out=\"line.book_id.title or ''\">عنوان الكتاب</t></strong></li>\n"
+"                            </t>\n"
+"                        </ul>\n"
+"                        <br>\n"
+"                        يرجى إرجاعها في الوقت المحدد.\n"
+"                        <br><br>\n"
+"                        شكراً لك،<br>\n"
+"                        فريق إدارة المكتبة\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid ""
+"<i class=\"fa fa-book fa-3x mb-3\" style=\"color: #10b981;\"/><br/>\n"
+"                                                <strong style=\"display: block; margin-top: 10px;\">Item Reserved</strong>"
+msgstr "<i class=\"fa fa-book fa-3x mb-3\" style=\"color: #10b981;\"/><br/>\n                                                <strong style=\"display: block; margin-top: 10px;\">عنصر محجوز</strong>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid ""
+"<i class=\"fa fa-clock-o fa-3x mb-3\" style=\"color: #10b981;\"/><br/>\n"
+"                                                <strong style=\"display: block; margin-top: 10px;\">Hold Until</strong>"
+msgstr "<i class=\"fa fa-clock-o fa-3x mb-3\" style=\"color: #10b981;\"/><br/>\n                                                <strong style=\"display: block; margin-top: 10px;\">محجوز حتى</strong>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid ""
+"<i class=\"fa fa-user fa-3x mb-3\" style=\"color: #10b981;\"/><br/>\n"
+"                                                <strong style=\"display: block; margin-top: 10px;\">Reserved For</strong>"
+msgstr "<i class=\"fa fa-user fa-3x mb-3\" style=\"color: #10b981;\"/><br/>\n                                                <strong style=\"display: block; margin-top: 10px;\">محجوز لـ</strong>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+msgid ""
+"<small class=\"text-muted text-uppercase fw-bold\" style=\"font-size: "
+"0.7rem; letter-spacing: 1px;\">Identifier</small>"
+msgstr ""
+"<small class=\"text-muted text-uppercase fw-bold\" style=\"font-size: "
+"0.7rem; letter-spacing: 1px;\">المعرف</small>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+msgid ""
+"<small class=\"text-muted text-uppercase fw-bold\" style=\"font-size: "
+"0.7rem;\">Expires On</small>"
+msgstr ""
+"<small class=\"text-muted text-uppercase fw-bold\" style=\"font-size: "
+"0.7rem;\">ينتهي في</small>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+msgid ""
+"<small class=\"text-muted text-uppercase fw-bold\" style=\"font-size: "
+"0.7rem;\">Member Since</small>"
+msgstr ""
+"<small class=\"text-muted text-uppercase fw-bold\" style=\"font-size: "
+"0.7rem;\">عضو منذ</small>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.author_form
+msgid "<span class=\"o_stat_text\">Books</span>"
+msgstr "<span class=\"o_stat_text\">Books</span>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "<span>Borrowed:</span>"
+msgstr "<span>Borrowed:</span>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "<span>Due Date:</span>"
+msgstr "<span>Due Date:</span>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid ""
+"<strong class=\"text-muted small text-uppercase d-block mb-1\">Generated "
+"Date</strong>"
+msgstr ""
+"<strong class=\"text-muted small text-uppercase d-block mb-1\">تاريخ "
+"الإنشاء</strong>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "<strong style=\"color: #475569;\">Date: </strong>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "<strong>Report Date:</strong><br/>"
+msgstr "<strong>Report Date:</strong><br/>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "<strong>Reservation Date:</strong>"
+msgstr "<strong>Reservation Date:</strong>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "<strong>Special Instructions:</strong>"
+msgstr "<strong>Special Instructions:</strong>"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid ""
+"<strong>Terms &amp; Conditions:</strong><br/>\n"
+"                                    1. Returns must be made before the expected return date to avoid fines.<br/>\n"
+"                                    2. Damaged or lost items are subject to full replacement cost."
+msgstr ""
+"<strong>الشروط والأحكام:</strong><br/>\n"
+"                                    1. يجب إعادة الكتب قبل تاريخ الإرجاع لتجنب الغرامات.<br/>\n"
+"                                    2. العناصر التالفة أو المفقودة تخضع لتكلفة الاستبدال بالكامل."
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "AUTHOR PROFILE"
+msgstr "ملف المؤلف"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Accumulated Fine"
+msgstr "الغرامة المتراكمة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_needaction
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_needaction
+#: model:ir.model.fields,field_description:library.field_library_books__message_needaction
+#: model:ir.model.fields,field_description:library.field_library_member__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "Actions"
+msgstr "إجراءات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__active
+#: model:ir.model.fields,field_description:library.field_library_books__active
+#: model:ir.model.fields,field_description:library.field_library_member__active
+#: model:ir.model.fields.selection,name:library.selection__library_member__state__active
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__active_borrowings_count
+msgid "Active Borrowings"
+msgstr "الإعارات النشطة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__active_lang_count
+msgid "Active Lang Count"
+msgstr "عدد اللغات النشطة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Active Members"
+msgstr "الأعضاء النشطين"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_ids
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_ids
+#: model:ir.model.fields,field_description:library.field_library_books__activity_ids
+#: model:ir.model.fields,field_description:library.field_library_member__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_exception_decoration
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_exception_decoration
+#: model:ir.model.fields,field_description:library.field_library_books__activity_exception_decoration
+#: model:ir.model.fields,field_description:library.field_library_member__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_state
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_state
+#: model:ir.model.fields,field_description:library.field_library_books__activity_state
+#: model:ir.model.fields,field_description:library.field_library_member__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_type_icon
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_type_icon
+#: model:ir.model.fields,field_description:library.field_library_books__activity_type_icon
+#: model:ir.model.fields,field_description:library.field_library_member__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/library_statistics/library_statistics.xml:0
+#, python-format
+msgid "Add Book"
+msgstr "إضافة كتاب"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "Add New Record"
+msgstr "إضافة سجل جديد"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__type
+msgid "Address Type"
+msgstr "نوع العنوان"
+
+#. module: library
+#: model:ir.ui.menu,name:library.Borrowing_Records_menu_item
+msgid "All Records"
+msgstr "كل السجلات"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr "سيتم ترجمة جميع رسائل البريد الإلكتروني والمستندات المرسلة إلى جهة الاتصال هذه بهذه اللغة."
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Archive"
+msgstr "أرشفة"
+
+#. module: library
+#: model:ir.actions.server,name:library.action_archive_old_returned_loans_ir_actions_server
+msgid "Archive Old Returned Loans"
+msgstr "أرشفة الإعارات القديمة المرجعة"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__archived
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__archived
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Are You Sure You Want To Return All Books? This Will End The Record."
+msgstr "هل أنت متأكد أنك تريد إرجاع جميع الكتب؟ هذا سينهي السجل."
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_attachment_count
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_attachment_count
+#: model:ir.model.fields,field_description:library.field_library_books__message_attachment_count
+#: model:ir.model.fields,field_description:library.field_library_member__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_author__name
+#: model:ir.model.fields,field_description:library.field_library_books__author_name
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "Author"
+msgstr "المؤلف"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_author__date_of_birth
+#: model:ir.model.fields,field_description:library.field_library_books__author_dob
+msgid "Author Birthday"
+msgstr "تاريخ ميلاد المؤلف"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.author_form
+msgid "Author Info"
+msgstr "معلومات المؤلف"
+
+#. module: library
+#: model:ir.actions.report,name:library.action_report_authors
+msgid "Author Profile Report"
+msgstr "تقرير ملف المؤلف"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_author__book_ids
+#: model_terms:ir.ui.view,arch_db:library.author_form
+msgid "Authored Books"
+msgstr "الكتب المؤلفة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__author_id
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Authors"
+msgstr "المؤلفون"
+
+#. module: library
+#: model:ir.ui.menu,name:library.authors_list_view_menu
+msgid "Authors List (OWL)"
+msgstr "قائمة المؤلفين (OWL)"
+
+#. module: library
+#: model:ir.actions.client,name:library.action_authors_list_view
+msgid "Authors Management"
+msgstr "إدارة المؤلفين"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__available
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__available
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__available
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Available"
+msgstr "متاح"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Available Books"
+msgstr "الكتب المتاحة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__avatar_1920
+msgid "Avatar"
+msgstr "الصورة الرمزية"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__avatar_1024
+msgid "Avatar 1024"
+msgstr "الصورة الرمزية 1024"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__avatar_128
+msgid "Avatar 128"
+msgstr "الصورة الرمزية 128"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__avatar_256
+msgid "Avatar 256"
+msgstr "الصورة الرمزية 256"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__avatar_512
+msgid "Avatar 512"
+msgstr "الصورة الرمزية 512"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__bank_ids
+msgid "Banks"
+msgstr "البنوك"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__barcode
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "Barcode"
+msgstr "الباركود"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__is_blacklisted
+msgid "Blacklist"
+msgstr "القائمة السوداء"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__book_id
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+msgid "Book"
+msgstr "كتاب"
+
+#. module: library
+#: model:ir.model,name:library.model_borrowing_records
+msgid "Book Borrowing Record"
+msgstr "سجل إعارة الكتب"
+
+#. module: library
+#: model:ir.model,name:library.model_library_book_category
+msgid "Book Category"
+msgstr "فئة الكتاب"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Book INFO"
+msgstr "معلومات الكتاب"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_tree
+msgid "Book Reservations"
+msgstr "حجز الكتب"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__line_state
+msgid "Book Status"
+msgstr "حالة الكتاب"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__book_id
+#: model:ir.model.fields,field_description:library.field_library_books__title
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Book Title"
+msgstr "عنوان الكتاب"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "Booking Reference:"
+msgstr "مرجع الحجز:"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_category__book_ids
+#: model:ir.ui.menu,name:library.books_menu
+msgid "Books"
+msgstr "الكتب"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_books_graph
+#: model_terms:ir.ui.view,arch_db:library.view_library_books_pivot
+msgid "Books Analysis"
+msgstr "تحليل الكتب"
+
+#. module: library
+#: model:ir.actions.act_window,name:library.LibraryBooksAuthors_action
+#: model:ir.ui.menu,name:library.LibraryBooksAuthor_menu_item
+msgid "Books Authors"
+msgstr "مؤلفو الكتب"
+
+#. module: library
+#: model:ir.actions.act_window,name:library.LibraryBooks_action
+#: model:ir.ui.menu,name:library.LibraryBooks_menu_item
+msgid "Books Collection"
+msgstr "مجموعة الكتب"
+
+#. module: library
+#: model:ir.ui.menu,name:library.books_list_view_menu
+msgid "Books List (OWL)"
+msgstr "قائمة الكتب (OWL)"
+
+#. module: library
+#: model:ir.actions.client,name:library.action_books_list_view
+msgid "Books Management"
+msgstr "إدارة الكتب"
+
+#. module: library
+#: model:ir.actions.act_window,name:library.LibraryBooksPublisher_action
+#: model:ir.ui.menu,name:library.LibraryBooksPublisher_menu_item
+msgid "Books Publishers"
+msgstr "ناشرو الكتب"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_line__line_state__borrowed
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__borrowed
+msgid "Borrowed"
+msgstr "مستعار"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__borrowing_line_ids
+msgid "Borrowed Books"
+msgstr "الكتب المستعارة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Borrowed Items"
+msgstr "العناصر المستعارة"
+
+#. module: library
+#: model:ir.ui.menu,name:library.borrowing_recs
+msgid "Borrowing"
+msgstr "الإعارة"
+
+#. module: library
+#: model:ir.ui.menu,name:library.borrowing_list_view_menu
+msgid "Borrowing (OWL)"
+msgstr "الإعارة (OWL)"
+
+#. module: library
+#: model:mail.template,subject:library.mail_template_borrowing_confirmation
+msgid "Borrowing Confirmation Ref {{ object.name }}"
+msgstr "مرجع تأكيد الاستعارة {{ object.name }}"
+
+#. module: library
+#: model:ir.actions.act_window,name:library.action_view_borrowing_history
+#: model:ir.model.fields,field_description:library.field_library_member__borrowing_ids
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Borrowing History"
+msgstr "سجل الإعارة"
+
+#. module: library
+#: model:ir.model,name:library.model_borrowing_line
+msgid "Borrowing Line"
+msgstr "بند الإعارة"
+
+#. module: library
+#: model:ir.actions.client,name:library.action_borrowing_list_view
+msgid "Borrowing Management"
+msgstr "إدارة الإعارة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Borrowing Record"
+msgstr "سجل الإعارة"
+
+#. module: library
+#: model:ir.actions.act_window,name:library.borrowing_records_action
+#: model:ir.model.fields,field_description:library.field_borrowing_line__borrowing_id
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_tree
+msgid "Borrowing Records"
+msgstr "سجلات الإعارة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Borrowing Statement"
+msgstr "بيان الإعارة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Borrowings"
+msgstr "الإعارات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__message_bounce
+msgid "Bounce"
+msgstr "ارتداد"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_form
+#: model_terms:ir.ui.view,arch_db:library.view_library_change_status_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_book_reservation__state__cancelled
+#: model:ir.model.fields.selection,name:library.selection__library_member__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Card ID:"
+msgstr "معرف البطاقة:"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__card_number
+msgid "Card Number"
+msgstr "رقم البطاقة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__category_id
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Category"
+msgstr "الفئة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_category__name
+msgid "Category Name"
+msgstr "اسم الفئة"
+
+#. module: library
+#: model:ir.actions.act_window,name:library.action_library_change_status_wizard
+#: model_terms:ir.ui.view,arch_db:library.view_library_change_status_wizard_form
+msgid "Change Status"
+msgstr "تغيير الحالة"
+
+#. module: library
+#: model:ir.model,name:library.model_library_change_status_wizard
+msgid "Change Status Wizard"
+msgstr "معالج تغيير الحالة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__channel_ids
+msgid "Channels"
+msgstr "القنوات"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_books_form_inherit
+msgid "Check Availability"
+msgstr "التحقق من التوافر"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "تحقق مما إذا كانت جهة الاتصال شركة، وإلا فهي فرد"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__employee
+msgid "Check this box if this contact is an Employee."
+msgstr "حدد هذا المربع إذا كانت جهة الاتصال هذه موظفًا."
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__city
+msgid "City"
+msgstr "المدينة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__color
+msgid "Color Index"
+msgstr "مؤشر اللون"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__commercial_partner_id
+msgid "Commercial Entity"
+msgstr "كيان تجاري"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__company_registry
+msgid "Company ID"
+msgstr "معرف الشركة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__company_name
+msgid "Company Name"
+msgstr "اسم الشركة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__commercial_company_name
+msgid "Company Name Entity"
+msgstr "اسم كيان الشركة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__company_type
+msgid "Company Type"
+msgstr "نوع الشركة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__contact_address
+msgid "Complete Address"
+msgstr "العنوان الكامل"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__complete_name
+msgid "Complete Name"
+msgstr "الاسم الكامل"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Comprehensive Library Inventory"
+msgstr "جرد المكتبة الشامل"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Confirm Borrowing"
+msgstr "تأكيد الإعارة"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_book_reservation__state__confirmed
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__child_ids
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__partner_id
+msgid "Contact Name"
+msgstr "اسم جهة الاتصال"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__copies
+msgid "Copies"
+msgstr "النسخ"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_author__book_count
+msgid "Count of Books"
+msgstr "عدد الكتب"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr "عداد عدد الرسائل المرتدة لجهة الاتصال هذه"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__country_id
+msgid "Country"
+msgstr "الدولة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__country_code
+msgid "Country Code"
+msgstr "رمز الدولة"
+
+#. module: library
+#: model_terms:ir.actions.act_window,help:library.action_library_members
+msgid "Create your first member!"
+msgstr "أنشئ عضو الأول!"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__create_uid
+#: model:ir.model.fields,field_description:library.field_borrowing_records__create_uid
+#: model:ir.model.fields,field_description:library.field_library_author__create_uid
+#: model:ir.model.fields,field_description:library.field_library_book_category__create_uid
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__create_uid
+#: model:ir.model.fields,field_description:library.field_library_books__create_uid
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__create_uid
+#: model:ir.model.fields,field_description:library.field_library_member__create_uid
+#: model:ir.model.fields,field_description:library.field_library_publisher__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__create_date
+#: model:ir.model.fields,field_description:library.field_borrowing_records__create_date
+#: model:ir.model.fields,field_description:library.field_library_author__create_date
+#: model:ir.model.fields,field_description:library.field_library_book_category__create_date
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__create_date
+#: model:ir.model.fields,field_description:library.field_library_books__create_date
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__create_date
+#: model:ir.model.fields,field_description:library.field_library_member__create_date
+#: model:ir.model.fields,field_description:library.field_library_publisher__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__created_by_user
+msgid "Creator Name"
+msgstr "اسم المنشئ"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__currently_borrowed_count
+msgid "Currently Borrowed"
+msgstr "مستعار حالياً"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__date
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__date_borrowed
+msgid "Date Borrowed"
+msgstr "تاريخ الإعارة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__date_expected_return
+msgid "Date Expected Return"
+msgstr "تاريخ الإرجاع المتوقع"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__date_returned_line
+#: model:ir.model.fields,field_description:library.field_borrowing_records__date_returned
+msgid "Date Returned"
+msgstr "تاريخ الإرجاع"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "Delete Record"
+msgstr "حذف السجل"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_category__description
+#: model:ir.model.fields,field_description:library.field_library_books__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__description_summary
+msgid "Description Summary"
+msgstr "ملخص الوصف"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__display_name
+#: model:ir.model.fields,field_description:library.field_borrowing_records__display_name
+#: model:ir.model.fields,field_description:library.field_library_author__display_name
+#: model:ir.model.fields,field_description:library.field_library_book_category__display_name
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__display_name
+#: model:ir.model.fields,field_description:library.field_library_books__display_name
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__display_name
+#: model:ir.model.fields,field_description:library.field_library_member__display_name
+#: model:ir.model.fields,field_description:library.field_library_publisher__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__draft
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__draft
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__edition
+msgid "Edition"
+msgstr "الطبعة"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__partner_share
+msgid ""
+"Either customer (not a user), either shared user. Indicated the current "
+"partner is a customer without access or with a limited access created for "
+"sharing data."
+msgstr "إما عميل (ليس مستخدمًا)، أو مستخدم مشترك. يشير إلى أن الشريك الحالي هو عميل بدون وصول أو بوصول محدود."
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__employee
+msgid "Employee"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_tree
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_tree
+msgid "Excel Report"
+msgstr "تقرير إكسل"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__4
+msgid "Excellent"
+msgstr "ممتاز"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__expired
+#: model:ir.model.fields.selection,name:library.selection__library_book_reservation__state__expired
+#: model:ir.model.fields.selection,name:library.selection__library_member__state__expired
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+msgid "Expired"
+msgstr "منتهية الصلاحية"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Expired Members"
+msgstr "الأعضاء منتهيو العضوية"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__expiry_date
+#: model:ir.model.fields,field_description:library.field_library_member__membership_expiry_date
+msgid "Expiry Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__fine_paid
+msgid "Fine Paid"
+msgstr "غرامة مدفوعة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__fine_per_day
+msgid "Fine Per Day"
+msgstr "الغرامة في اليوم"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Fines & Penalties"
+msgstr "الغرامات والعقوبات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_follower_ids
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_follower_ids
+#: model:ir.model.fields,field_description:library.field_library_books__message_follower_ids
+#: model:ir.model.fields,field_description:library.field_library_member__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_partner_ids
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_partner_ids
+#: model:ir.model.fields,field_description:library.field_library_books__message_partner_ids
+#: model:ir.model.fields,field_description:library.field_library_member__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__activity_type_icon
+#: model:ir.model.fields,help:library.field_library_book_reservation__activity_type_icon
+#: model:ir.model.fields,help:library.field_library_books__activity_type_icon
+#: model:ir.model.fields,help:library.field_library_member__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font awesome مثال: fa-tasks"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr "تنسيق عنوان البريد الإلكتروني "الاسم <email@domain>""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__email_formatted
+msgid "Formatted Email"
+msgstr "بريد إلكتروني منسق"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_book_reservation__state__fulfilled
+msgid "Fulfilled"
+msgstr "تم التنفيذ"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Full Return"
+msgstr "إرجاع كامل"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__partner_latitude
+msgid "Geo Latitude"
+msgstr "خط العرض الجغرافي"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__partner_longitude
+msgid "Geo Longitude"
+msgstr "خط الطول الجغرافي"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__has_message
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__has_message
+#: model:ir.model.fields,field_description:library.field_library_books__has_message
+#: model:ir.model.fields,field_description:library.field_library_member__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: library
+#: model:ir.module.category,description:library.module_category_library
+msgid "Helps you manage your library."
+msgstr "يساعدك في إدارة مكتبتك."
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__2
+msgid "High"
+msgstr "مرتفع"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__borrowing_line_ids
+msgid "History of Borrowing"
+msgstr "تاريخ الإعارة"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#: model:ir.model.fields,field_description:library.field_borrowing_line__id
+#: model:ir.model.fields,field_description:library.field_borrowing_records__id
+#: model:ir.model.fields,field_description:library.field_library_author__id
+#: model:ir.model.fields,field_description:library.field_library_book_category__id
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__id
+#: model:ir.model.fields,field_description:library.field_library_books__id
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__id
+#: model:ir.model.fields,field_description:library.field_library_member__id
+#: model:ir.model.fields,field_description:library.field_library_publisher__id
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+#, python-format
+msgid "ID"
+msgstr "المعرف"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__im_status
+msgid "IM Status"
+msgstr "حالة المراسلة الفورية"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__isbn
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "ISBN"
+msgstr "ردمك (ISBN)"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_exception_icon
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_exception_icon
+#: model:ir.model.fields,field_description:library.field_library_books__activity_exception_icon
+#: model:ir.model.fields,field_description:library.field_library_member__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__activity_exception_icon
+#: model:ir.model.fields,help:library.field_library_book_reservation__activity_exception_icon
+#: model:ir.model.fields,help:library.field_library_books__activity_exception_icon
+#: model:ir.model.fields,help:library.field_library_member__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__message_needaction
+#: model:ir.model.fields,help:library.field_library_book_reservation__message_needaction
+#: model:ir.model.fields,help:library.field_library_books__message_needaction
+#: model:ir.model.fields,help:library.field_library_member__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فالرسائل الجديدة تتطلب انتباهك."
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__message_has_error
+#: model:ir.model.fields,help:library.field_library_book_reservation__message_has_error
+#: model:ir.model.fields,help:library.field_library_books__message_has_error
+#: model:ir.model.fields,help:library.field_library_member__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فبعض الرسائل بها خطأ في التسليم."
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__is_blacklisted
+msgid ""
+"If the email address is on the blacklist, the contact won't receive mass "
+"mailing anymore, from any list"
+msgstr "إذا كان عنوان البريد الإلكتروني في القائمة السوداء، فلن تتلقى جهة الاتصال رسائل جماعية بعد الآن."
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__image_1920
+msgid "Image"
+msgstr "صورة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__image_1024
+msgid "Image 1024"
+msgstr "صورة 1024"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__image_128
+msgid "Image 128"
+msgstr "صورة 128"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__image_256
+msgid "Image 256"
+msgstr "صورة 256"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__image_512
+msgid "Image 512"
+msgstr "صورة 512"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__industry_id
+msgid "Industry"
+msgstr "الصناعة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__contact_address_inline
+msgid "Inlined Complete Address"
+msgstr "العنوان الكامل المضمن"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_books__isbn
+msgid "International Standard Book Number"
+msgstr "الرقم الدولي المعياري للكتاب"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_is_follower
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_is_follower
+#: model:ir.model.fields,field_description:library.field_library_books__message_is_follower
+#: model:ir.model.fields,field_description:library.field_library_member__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__is_public
+msgid "Is Public"
+msgstr "عام"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__is_company
+msgid "Is a Company"
+msgstr "شركة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Items on Loan"
+msgstr "عناصر معارة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__function
+msgid "Job Position"
+msgstr "المسمى الوظيفي"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__language_id
+#: model:ir.model.fields,field_description:library.field_library_member__lang
+msgid "Language"
+msgstr "اللغة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__write_uid
+#: model:ir.model.fields,field_description:library.field_borrowing_records__write_uid
+#: model:ir.model.fields,field_description:library.field_library_author__write_uid
+#: model:ir.model.fields,field_description:library.field_library_book_category__write_uid
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__write_uid
+#: model:ir.model.fields,field_description:library.field_library_books__write_uid
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__write_uid
+#: model:ir.model.fields,field_description:library.field_library_member__write_uid
+#: model:ir.model.fields,field_description:library.field_library_publisher__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__write_date
+#: model:ir.model.fields,field_description:library.field_borrowing_records__write_date
+#: model:ir.model.fields,field_description:library.field_library_author__write_date
+#: model:ir.model.fields,field_description:library.field_library_book_category__write_date
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__write_date
+#: model:ir.model.fields,field_description:library.field_library_books__write_date
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__write_date
+#: model:ir.model.fields,field_description:library.field_library_member__write_date
+#: model:ir.model.fields,field_description:library.field_library_publisher__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/library_statistics/library_statistics.xml:0
+#, python-format
+msgid "Last Updated:"
+msgstr "آخر تحديث:"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Less 100 Pounds"
+msgstr "أقل من 100 جنيه"
+
+#. module: library
+#: model:res.groups,name:library.group_library_librarian
+msgid "Librarian"
+msgstr "أمين المكتبة"
+
+#. module: library
+#: model:ir.module.category,name:library.module_category_library
+#: model:ir.ui.menu,name:library.library_root_menu
+msgid "Library"
+msgstr "المكتبة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+msgid "Library Access"
+msgstr "الوصول للمكتبة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "Library Admin"
+msgstr "مدير المكتبة"
+
+#. module: library
+#: model:ir.model,name:library.model_library_author
+msgid "Library Author"
+msgstr "مؤلف المكتبة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "Library Bibliography"
+msgstr "ببليوغرافيا المكتبة"
+
+#. module: library
+#: model:ir.model,name:library.model_library_book_reservation
+msgid "Library Book Reservation"
+msgstr "حجز كتاب بالمكتبة"
+
+#. module: library
+#: model:ir.model,name:library.model_library_books
+msgid "Library Books"
+msgstr "كتب المكتبة"
+
+#. module: library
+#: model:ir.actions.report,name:library.books_report
+msgid "Library Catalog (PDF)"
+msgstr "تقرير الكتاب"
+
+#. module: library
+#: model:ir.model,name:library.model_library_member
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Library Member"
+msgstr "عضو المكتبة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_tree
+msgid "Library Members"
+msgstr "أعضاء المكتبة"
+
+#. module: library
+#: model:ir.model,name:library.model_library_publisher
+msgid "Library Publisher"
+msgstr "ناشر المكتبة"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/library_statistics/library_statistics.xml:0
+#: model:ir.actions.client,name:library.action_library_statistics
+#, python-format
+msgid "Library Statistics"
+msgstr "إحصائيات المكتبة"
+
+#. module: library
+#: model:mail.template,name:library.mail_template_borrowing_confirmation
+msgid "Library: Borrowing Confirmation"
+msgstr "المكتبة: تأكيد الاستعارة"
+
+#. module: library
+#: model:ir.actions.server,name:library.ir_cron_check_overdue_books_ir_actions_server
+msgid "Library: Check Overdue Books"
+msgstr "المكتبة: التحقق من الكتب المتأخرة"
+
+#. module: library
+#: model:mail.template,name:library.mail_template_overdue_notification
+msgid "Library: Overdue Notification"
+msgstr "المكتبة: إشعار التأخير"
+
+#. module: library
+#: model:mail.template,name:library.mail_template_return_reminder
+msgid "Library: Return Reminder"
+msgstr "المكتبة: تذكير بالإرجاع"
+
+#. module: library
+#: model:ir.actions.server,name:library.ir_cron_send_return_reminders_ir_actions_server
+msgid "Library: Send Return Reminders"
+msgstr "المكتبة: إرسال تذكيرات الإرجاع"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Loan Duration"
+msgstr "مدة الإعارة"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_line__line_state__lost
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__lost
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__lost
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__lost
+msgid "Lost"
+msgstr "مفقود"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__0
+msgid "Low"
+msgstr "منخفض"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__maintenance
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__maintenance
+msgid "Maintenance"
+msgstr "صيانة"
+
+#. module: library
+#: model:res.groups,name:library.group_library_manager
+msgid "Manager"
+msgstr "مدير"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__5
+msgid "Masterpiece"
+msgstr "تحفة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__max_books_allowed
+msgid "Max Books Allowed"
+msgstr "أقصى عدد كتب مسموح به"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__member_id
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__member_id
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+msgid "Member"
+msgstr "عضو"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Member Details"
+msgstr "تفاصيل العضو"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__member_image
+msgid "Member Image"
+msgstr "صورة العضو"
+
+#. module: library
+#: model:ir.actions.act_window,name:library.action_library_members
+#: model:ir.ui.menu,name:library.menu_library_members
+msgid "Members"
+msgstr "أعضاء"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_graph
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_pivot
+msgid "Members Analysis"
+msgstr "تحليل الأعضاء"
+
+#. module: library
+#: model:ir.ui.menu,name:library.members_list_view_menu
+msgid "Members List (OWL)"
+msgstr "قائمة الأعضاء (OWL)"
+
+#. module: library
+#: model:ir.actions.client,name:library.action_members_list_view
+msgid "Members Management"
+msgstr "إدارة الأعضاء"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__membership_date
+msgid "Membership Date"
+msgstr "تاريخ العضوية"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__membership_type
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Membership Type"
+msgstr "نوع العضوية"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_has_error
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_has_error
+#: model:ir.model.fields,field_description:library.field_library_books__message_has_error
+#: model:ir.model.fields,field_description:library.field_library_member__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_ids
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_ids
+#: model:ir.model.fields,field_description:library.field_library_books__message_ids
+#: model:ir.model.fields,field_description:library.field_library_member__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__mobile
+msgid "Mobile"
+msgstr "الجوال"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "More 100 Pounds"
+msgstr "أكثر من 100 جنيه"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__my_activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__my_activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_books__my_activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_member__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__name
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Name"
+msgstr "الاسم"
+
+#. module: library
+#. odoo-python
+#: code:addons/library/lib_models/library_book_reservation.py:0
+#: code:addons/library/lib_models/library_book_reservation.py:0
+#: code:addons/library/lib_models/library_book_reservation.py:0
+#: code:addons/library/lib_models/library_book_reservation.py:0
+#: code:addons/library/lib_models/library_member.py:0
+#: code:addons/library/lib_models/library_member.py:0
+#: code:addons/library/lib_models/library_member.py:0
+#: code:addons/library/lib_models/library_member.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__new_status
+msgid "New Status"
+msgstr "حالة جديدة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_books__activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_member__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_summary
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_summary
+#: model:ir.model.fields,field_description:library.field_library_books__activity_summary
+#: model:ir.model.fields,field_description:library.field_library_member__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_type_id
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_type_id
+#: model:ir.model.fields,field_description:library.field_library_books__activity_type_id
+#: model:ir.model.fields,field_description:library.field_library_member__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "No books recorded for this publisher."
+msgstr "لا توجد كتب مسجلة لهذا الناشر."
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "No records found. Add your first record above!"
+msgstr "لا توجد سجلات. أضف سجلك الأول أعلاه!"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__1
+msgid "Normal"
+msgstr "عادي"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__email_normalized
+msgid "Normalized Email"
+msgstr "البريد الإلكتروني الموحد"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Not Available"
+msgstr "غير متاح"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__notes
+#: model:ir.model.fields,field_description:library.field_library_member__comment
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_needaction_counter
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_needaction_counter
+#: model:ir.model.fields,field_description:library.field_library_books__message_needaction_counter
+#: model:ir.model.fields,field_description:library.field_library_member__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_has_error_counter
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_has_error_counter
+#: model:ir.model.fields,field_description:library.field_library_books__message_has_error_counter
+#: model:ir.model.fields,field_description:library.field_library_member__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__message_needaction_counter
+#: model:ir.model.fields,help:library.field_library_book_reservation__message_needaction_counter
+#: model:ir.model.fields,help:library.field_library_books__message_needaction_counter
+#: model:ir.model.fields,help:library.field_library_member__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__message_has_error_counter
+#: model:ir.model.fields,help:library.field_library_book_reservation__message_has_error_counter
+#: model:ir.model.fields,help:library.field_library_books__message_has_error_counter
+#: model:ir.model.fields,help:library.field_library_member__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "OUTSTANDING"
+msgstr "معلق"
+
+#. module: library
+#: model:ir.ui.menu,name:library.owl_menus
+msgid "OWL Menus"
+msgstr "قوائم OWL"
+
+#. module: library
+#: model:ir.actions.report,name:library.action_report_borrowing
+msgid "Official Borrowing Statement"
+msgstr "بيان الإعارة الرسمي"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Official Catalogue"
+msgstr "الكتالوج الرسمي"
+
+#. module: library
+#: model:ir.actions.report,name:library.action_report_reservations
+msgid "Official Reservation Slips"
+msgstr "قسائم الحجز الرسمية"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__is_overdue
+msgid "Overdue"
+msgstr "منتهية الصلاحية"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "PAID"
+msgstr "مدفوعة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "PUBLISHING HOUSE"
+msgstr "دار النشر"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__pages
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "Pages"
+msgstr "الصفحات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__parent_state
+msgid "Parent State"
+msgstr "الحالة الأصلية"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__parent_name
+msgid "Parent name"
+msgstr "الاسم الأصلي"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__partially_returned
+msgid "Partially Returned"
+msgstr "مرجع جزئيًا"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__same_company_registry_partner_id
+msgid "Partner with same Company Registry"
+msgstr "شريك بنفس سجل الشركة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__same_vat_partner_id
+msgid "Partner with same Tax ID"
+msgstr "شريك بنفس الرقم الضريبي"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_book_reservation__state__pending
+msgid "Pending"
+msgstr "معلق"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: library
+#: model:ir.actions.report,name:library.action_report_library_member_card
+msgid "Premium Member Card"
+msgstr "بطاقة عضوية مميزة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__price
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Price"
+msgstr "السعر"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_member__membership_type__public
+msgid "Public"
+msgstr "عام"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__published_date
+msgid "Published Date"
+msgstr "تاريخ النشر"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "Published Works"
+msgstr "الأعمال المنشورة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "Published Year"
+msgstr "سنة النشر"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__publisher_id
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Publisher"
+msgstr "الناشر"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.publisher_form
+msgid "Publisher INFO"
+msgstr "معلومات الناشر"
+
+#. module: library
+#: model:ir.actions.report,name:library.action_report_publishers
+msgid "Publisher Inventory Report"
+msgstr "تقرير مخزون الناشر"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_publisher__name
+msgid "Publisher Name"
+msgstr "اسم الناشر"
+
+#. module: library
+#: model:ir.ui.menu,name:library.publishers_list_view_menu
+msgid "Publishers List (OWL)"
+msgstr "قائمة الناشرين (OWL)"
+
+#. module: library
+#: model:ir.actions.client,name:library.action_publishers_list_view
+msgid "Publishers Management"
+msgstr "إدارة الناشرين"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/library_statistics/library_statistics.xml:0
+#, python-format
+msgid "Quick Stats"
+msgstr "إحصائيات سريعة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "RESERVATION SLIP"
+msgstr "قسيمة حجز"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__rating
+msgid "Rating"
+msgstr "التقييم"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Receipt Ref:"
+msgstr "مرجع الإيصال:"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__name
+msgid "Record Number"
+msgstr "رقم السجل"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__ref
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__parent_id
+msgid "Related Company"
+msgstr "شركة ذات صلة"
+
+#. module: library
+#: model:mail.template,subject:library.mail_template_return_reminder
+msgid "Reminder: Books Due for Return Ref {{ object.name }}"
+msgstr "تذكير: كتب مستحقة الإرجاع مرجع {{ object.name }}"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Renew Membership"
+msgstr "تجديد العضوية"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Rent"
+msgstr "تأجير"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__rented
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__rented
+msgid "Rented"
+msgstr "مؤجر"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_form
+msgid "Reservation"
+msgstr "حجز"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__reservation_date
+msgid "Reservation Date"
+msgstr "تاريخ الحجز"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__name
+msgid "Reservation Reference"
+msgstr "مرجع الحجز"
+
+#. module: library
+#: model:ir.actions.act_window,name:library.action_library_book_reservation
+#: model:ir.ui.menu,name:library.menu_library_reservation
+msgid "Reservations"
+msgstr "الحجوزات"
+
+#. module: library
+#: model:ir.ui.menu,name:library.reservations_list_view_menu
+msgid "Reservations (OWL)"
+msgstr "الحجوزات (OWL)"
+
+#. module: library
+#: model:ir.actions.client,name:library.action_reservations_list_view
+msgid "Reservations Management"
+msgstr "إدارة الحجوزات"
+
+#. module: library
+#: model:ir.actions.server,name:library.action_reset_to_available
+msgid "Reset Available"
+msgstr "إعادة تعيين كمتاح"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Reset to Draft"
+msgstr "إعادة تعيين كمسودة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_user_id
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_user_id
+#: model:ir.model.fields,field_description:library.field_library_books__activity_user_id
+#: model:ir.model.fields,field_description:library.field_library_member__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Return"
+msgstr "إرجاع"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Return Action Date"
+msgstr "تاريخ إجراء الإرجاع"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_line__line_state__returned
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__fully_returned
+msgid "Returned"
+msgstr "مرجع"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Returns"
+msgstr "المردودات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__user_id
+msgid "Salesperson"
+msgstr "موظف المبيعات"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "Save Record"
+msgstr "حفظ السجل"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "Scan at the library counter to release items."
+msgstr "امسح ضوئيًا عند كاونتر المكتبة لإخراج العناصر."
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Search Members"
+msgstr "بحث الأعضاء"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+msgid "Search Reservations"
+msgstr "بحث الحجوزات"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+msgid "Secured Library Auth System"
+msgstr "نظام مصادقة المكتبة الآمن"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "Select"
+msgstr "تحديد"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__self
+msgid "Self"
+msgstr "الذات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__sequence_name
+msgid "Sequence Name"
+msgstr "اسم التسلسل"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__partner_share
+msgid "Share Partner"
+msgstr "مشاركة الشريك"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__shelf_location
+msgid "Shelf Location"
+msgstr "موقع الرف"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__signup_expiration
+msgid "Signup Expiration"
+msgstr "انتهاء التسجيل"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__signup_token
+msgid "Signup Token"
+msgstr "رمز التسجيل"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__signup_type
+msgid "Signup Token Type"
+msgstr "نوع رمز التسجيل"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__signup_valid
+msgid "Signup Token is Valid"
+msgstr "رمز التسجيل صالح"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__signup_url
+msgid "Signup URL"
+msgstr "رابط التسجيل"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_member__membership_type__staff
+msgid "Staff"
+msgstr "الموظفين"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__starred_message_ids
+msgid "Starred Message"
+msgstr "رسالة مميزة بنجمة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__state
+#: model:ir.model.fields,field_description:library.field_library_member__state_id
+msgid "State"
+msgstr "الحالة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+#: model_terms:ir.ui.view,arch_db:library.Books_tree
+msgid "Statistics"
+msgstr "الإحصائيات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__state
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__state
+#: model:ir.model.fields,field_description:library.field_library_member__state
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__activity_state
+#: model:ir.model.fields,help:library.field_library_book_reservation__activity_state
+#: model:ir.model.fields,help:library.field_library_books__activity_state
+#: model:ir.model.fields,help:library.field_library_member__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "الحالة بناءً على الأنشطة:
+متأخر: تاريخ الاستحقاق مر
+اليوم: النشاط اليوم
+مخطط: أنشطة مستقبلية"
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مر بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: الأنشطة المستقبلية."
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Stock"
+msgstr "المخزون"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Stock Value"
+msgstr "قيمة المخزون"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__street
+msgid "Street"
+msgstr "الشارع"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__street2
+msgid "Street2"
+msgstr "الشارع 2"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_member__membership_type__student
+msgid "Student"
+msgstr "طالب"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Students"
+msgstr "طلاب"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Suspend Membership"
+msgstr "تعليق العضوية"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_member__state__suspended
+msgid "Suspended"
+msgstr "معلق"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__category_id
+msgid "Tags"
+msgstr "الوسوم"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__vat
+msgid "Tax ID"
+msgstr "المعرف الضريبي"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_member__membership_type__teacher
+msgid "Teacher"
+msgstr "معلم"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Teachers"
+msgstr "معلمون"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__country_code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr "رمز الدولة ISO المكون من حرفين.
+يمكنك استخدام هذا الحقل للبحث السريع."
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__vat
+msgid ""
+"The Tax Identification Number. Values here will be validated based on the "
+"country format. You can use '/' to indicate that the partner is not subject "
+"to tax."
+msgstr "رقم التعريف الضريبي. سيتم التحقق من القيم هنا بناءً على تنسيق الدولة."
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__user_id
+msgid "The internal user in charge of this contact."
+msgstr "المستخدم الداخلي المسؤول عن جهة الاتصال هذه."
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_books__pages
+msgid "The number of book pages"
+msgstr "عدد صفحات الكتاب"
+
+#. module: library
+#: model:ir.model.constraint,message:library.constraint_library_books_positive_price
+msgid "The price must be positive."
+msgstr "يجب أن يكون السعر موجباً."
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__company_registry
+msgid ""
+"The registry number of the company. Use it if it is different from the Tax "
+"ID. It must be unique across all partners of a same country"
+msgstr "رقم سجل الشركة. استخدمه إذا كان مختلفًا عن الرقم الضريبي."
+"The registry number of the company. Use it if it is different from the Tax "
+"ID. It must be unique across all partners of a same country"
+
+#. module: library
+#: model:ir.model.constraint,message:library.constraint_library_books_unique_isbn
+msgid "This ISBN already exists!"
+msgstr "هذا الردمك موجود بالفعل!"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid ""
+"This document is an official export from the Library Management System."
+msgstr "هذه الوثيقة هي تصدير رسمي من نظام إدارة المكتبة."
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid ""
+"This document is an official export of the Library Management System "
+"inventory."
+msgstr "هذه الوثيقة هي تصدير رسمي لمخزون نظام إدارة المكتبة."
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__email_normalized
+msgid ""
+"This field is used to search on email address as the primary email field can"
+" contain more than strictly an email address."
+msgstr "يستخدم هذا الحقل للبحث عن عنوان البريد الإلكتروني حيث يمكن أن يحتوي حقل البريد الإلكتروني الأساسي على أكثر من مجرد عنوان بريد إلكتروني."
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__tz
+msgid "Timezone"
+msgstr "المنطقة الزمنية"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__tz_offset
+msgid "Timezone offset"
+msgstr "إزاحة المنطقة الزمنية"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__title
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "Title"
+msgstr "العنوان"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__total_books_count
+msgid "Total Books Count"
+msgstr "إجمالي عدد الكتب"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/library_statistics/library_statistics.xml:0
+#, python-format
+msgid "Total Books:"
+msgstr "إجمالي الكتب:"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Total Borrowed"
+msgstr "إجمالي المستعار"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__total_borrowed_count
+msgid "Total Borrowed Times"
+msgstr "إجمالي مرات الاستعارة"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_tree
+msgid "Total Borrowings"
+msgstr "إجمالي الإعارات"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__total_fine
+msgid "Total Fine"
+msgstr "إجمالي الغرامة"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__total_fines
+msgid "Total Fines"
+msgstr "إجمالي الغرامات"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Total Titles"
+msgstr "إجمالي العناوين"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__activity_exception_decoration
+#: model:ir.model.fields,help:library.field_library_book_reservation__activity_exception_decoration
+#: model:ir.model.fields,help:library.field_library_books__activity_exception_decoration
+#: model:ir.model.fields,help:library.field_library_member__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل."
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Un Available"
+msgstr "غير متاح"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_change_status_wizard_form
+msgid "Update Status"
+msgstr "تحديث الحالة"
+
+#. module: library
+#: model:mail.template,subject:library.mail_template_overdue_notification
+msgid "Urgent: Overdue Books Ref {{ object.name }}"
+msgstr "عاجل: كتب متأخرة مرجع {{ object.name }}"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__barcode
+msgid "Use a barcode to identify this contact."
+msgstr "استخدم الباركود لتعريف جهة الاتصال هذه."
+
+#. module: library
+#: model:res.groups,name:library.group_library_user
+msgid "User"
+msgstr "مستخدم"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__user_ids
+msgid "Users"
+msgstr "مستخدمين"
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "Value"
+msgstr "القيمة"
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__3
+msgid "Very High"
+msgstr "مرتفع جداً"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__website
+msgid "Website Link"
+msgstr "رابط الموقع"
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__tz
+msgid ""
+"When printing documents and exporting/importing data, time values are computed according to this timezone.\n"
+"If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
+"Anywhere else, time values are computed according to the time offset of your web client."
+msgstr "عند طباعة المستندات وتصدير/استيراد البيانات، يتم حساب قيم الوقت وفقًا لهذه المنطقة الزمنية."
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "Works Portfolio"
+msgstr "ملف الأعمال"
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__zip
+msgid "Zip"
+msgstr "الرمز البريدي"
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "records)"
+msgstr "سجلات)"
+
+
+#. module: library
+msgid "Book Count"
+msgstr "عدد الكتب"

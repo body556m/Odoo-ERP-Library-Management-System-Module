@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_library_member_card" model="ir.actions.report">
+        <field name="name">Premium Member Card</field>
+        <field name="model">library.member</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">library.report_member_card</field>
+        <field name="print_report_name">'Card - %s' % (object.card_number) if len(object) == 1 else 'Member Cards'</field>
+        <field name="binding_model_id" ref="model_library_member"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_member_card">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-family: 'Inter', sans-serif; page-break-after: always;">
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <!-- Card Container -->
+                                <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); background: white; border: 1px solid #e2e8f0; margin-top: 50px;">
+                                    
+                                    <!-- Card Header -->
+                                    <div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: white; padding: 25px; text-align: center; position: relative; overflow: hidden;">
+                                        <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
+                                        <h3 style="margin: 0; font-weight: 800; letter-spacing: 4px; text-transform: uppercase;">Library Access</h3>
+                                        <div style="background: #3b82f6; display: inline-block; padding: 4px 15px; border-radius: 20px; margin-top: 10px; font-size: 0.8rem; font-weight: 700;">
+                                            <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%B %d, %Y')"/>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div style="padding: 35px;">
+                                        <div class="row align-items-center">
+                                            <div class="col-5 text-center">
+                                                <div style="position: relative; display: inline-block;">
+                                                    <img t-if="o.member_image" t-att-src="image_data_uri(o.member_image)" 
+                                                         style="height: 160px; width: 160px; object-fit: cover; border-radius: 20px; border: 5px solid #f1f5f9; box-shadow: 0 10px 15px rgba(0,0,0,0.1);"/>
+                                                    <div t-else="" style="height: 160px; width: 160px; background-color: #f1f5f9; border-radius: 20px; border: 5px solid #f1f5f9; display: flex; align-items: center; justify-content: center;">
+                                                        <i class="fa fa-user fa-5x text-slate-300" style="color: #cbd5e1;"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+                                                <h2 style="color: #0f172a; font-weight: 800; margin-bottom: 20px; border-bottom: 3px solid #3b82f6; display: inline-block;"><span t-field="o.partner_id.name"/></h2>
+                                                
+                                                <div class="mb-2">
+                                                    <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem; letter-spacing: 1px;">Identifier</small>
+                                                    <div style="font-size: 1.25rem; font-weight: 700; color: #1e293b;">#<span t-field="o.card_number"/></div>
+                                                </div>
+                                                
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Member Since</small>
+                                                        <div style="font-weight: 600; color: #475569;" t-field="o.membership_date" t-options='{"widget": "date"}'/>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Expires On</small>
+                                                        <div style="font-weight: 600;" t-field="o.membership_expiry_date" t-options='{"widget": "date"}'
+                                                             t-att-class="'text-danger fw-bold' if o.state == 'expired' else 'text-slate-600'"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card Footer / Barcode -->
+                                    <div style="background: #f8fafc; padding: 20px; text-align: center; border-top: 2px dashed #e2e8f0;">
+                                        <img t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.card_number, 600, 100)" 
+                                             style="width:85%; height:45px; opacity: 0.8;" alt="Barcode"/>
+                                        <p style="margin: 10px 0 0 0; font-size: 0.65rem; color: #94a3b8; text-transform: uppercase; font-weight: 600; letter-spacing: 2px;">Secured Library Auth System</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </t>
+        </t>
+    </template>
+</odoo>

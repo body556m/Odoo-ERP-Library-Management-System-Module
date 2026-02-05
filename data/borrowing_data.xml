@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <record id="borrowing_01" model="borrowing.records">
+            <field name="member_id" ref="member_01"/>
+            <field name="date_borrowed">2026-01-15</field>
+            <field name="date_expected_return">2026-02-14</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_02" model="borrowing.records">
+            <field name="member_id" ref="member_02"/>
+            <field name="date_borrowed">2026-01-20</field>
+            <field name="date_expected_return">2026-02-19</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_03" model="borrowing.records">
+            <field name="member_id" ref="member_03"/>
+            <field name="date_borrowed">2026-01-18</field>
+            <field name="date_expected_return">2026-02-17</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_04" model="borrowing.records">
+            <field name="member_id" ref="member_04"/>
+            <field name="date_borrowed">2026-01-22</field>
+            <field name="date_expected_return">2026-02-21</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_05" model="borrowing.records">
+            <field name="member_id" ref="member_05"/>
+            <field name="date_borrowed">2026-01-10</field>
+            <field name="date_expected_return">2026-02-09</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_06" model="borrowing.records">
+            <field name="member_id" ref="member_07"/>
+            <field name="date_borrowed">2026-01-25</field>
+            <field name="date_expected_return">2026-02-24</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_07" model="borrowing.records">
+            <field name="member_id" ref="member_08"/>
+            <field name="date_borrowed">2026-01-12</field>
+            <field name="date_expected_return">2026-02-11</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_08" model="borrowing.records">
+            <field name="member_id" ref="member_09"/>
+            <field name="date_borrowed">2026-01-28</field>
+            <field name="date_expected_return">2026-02-27</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_09" model="borrowing.records">
+            <field name="member_id" ref="member_10"/>
+            <field name="date_borrowed">2026-01-05</field>
+            <field name="date_expected_return">2026-02-04</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_10" model="borrowing.records">
+            <field name="member_id" ref="member_11"/>
+            <field name="date_borrowed">2026-01-16</field>
+            <field name="date_expected_return">2026-02-15</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <!-- Returned Borrowing Records -->
+        <record id="borrowing_11" model="borrowing.records">
+            <field name="member_id" ref="member_13"/>
+            <field name="date_borrowed">2025-12-10</field>
+            <field name="date_expected_return">2026-01-09</field>
+            <field name="date_returned">2026-01-08</field>
+            <field name="fine_per_day">10.0</field>
+            <field name="fine_paid">True</field>
+        </record>
+        
+        <record id="borrowing_12" model="borrowing.records">
+            <field name="member_id" ref="member_14"/>
+            <field name="date_borrowed">2025-12-15</field>
+            <field name="date_expected_return">2026-01-14</field>
+            <field name="date_returned">2026-01-20</field>
+            <field name="fine_per_day">10.0</field>
+            <field name="fine_paid">False</field>
+        </record>
+        
+        <record id="borrowing_13" model="borrowing.records">
+            <field name="member_id" ref="member_15"/>
+            <field name="date_borrowed">2025-12-20</field>
+            <field name="date_expected_return">2026-01-19</field>
+            <field name="date_returned">2026-01-18</field>
+            <field name="fine_per_day">10.0</field>
+            <field name="fine_paid">True</field>
+        </record>
+        
+        <record id="borrowing_14" model="borrowing.records">
+            <field name="member_id" ref="member_17"/>
+            <field name="date_borrowed">2025-11-25</field>
+            <field name="date_expected_return">2025-12-25</field>
+            <field name="date_returned">2025-12-24</field>
+            <field name="fine_per_day">10.0</field>
+            <field name="fine_paid">True</field>
+        </record>
+        
+        <record id="borrowing_15" model="borrowing.records">
+            <field name="member_id" ref="member_18"/>
+            <field name="date_borrowed">2025-12-01</field>
+            <field name="date_expected_return">2025-12-31</field>
+            <field name="date_returned">2026-01-05</field>
+            <field name="fine_per_day">10.0</field>
+            <field name="fine_paid">False</field>
+        </record>
+        
+        <record id="borrowing_16" model="borrowing.records">
+            <field name="member_id" ref="member_19"/>
+            <field name="date_borrowed">2025-11-10</field>
+            <field name="date_expected_return">2025-12-10</field>
+            <field name="date_returned">2025-12-09</field>
+            <field name="fine_per_day">10.0</field>
+            <field name="fine_paid">True</field>
+        </record>
+        
+        <record id="borrowing_17" model="borrowing.records">
+            <field name="member_id" ref="member_20"/>
+            <field name="date_borrowed">2025-12-05</field>
+            <field name="date_expected_return">2026-01-04</field>
+            <field name="date_returned">2026-01-03</field>
+            <field name="fine_per_day">10.0</field>
+            <field name="fine_paid">True</field>
+        </record>
+        
+        <!-- Overdue Borrowing Records -->
+        <record id="borrowing_18" model="borrowing.records">
+            <field name="member_id" ref="member_01"/>
+            <field name="date_borrowed">2025-12-25</field>
+            <field name="date_expected_return">2026-01-24</field>
+            <field name="fine_per_day">10.0</field>
+            <field name="fine_paid">False</field>
+        </record>
+        
+        <record id="borrowing_19" model="borrowing.records">
+            <field name="member_id" ref="member_02"/>
+            <field name="date_borrowed">2025-12-28</field>
+            <field name="date_expected_return">2026-01-27</field>
+            <field name="fine_per_day">10.0</field>
+            <field name="fine_paid">False</field>
+        </record>
+        
+        <record id="borrowing_20" model="borrowing.records">
+            <field name="member_id" ref="member_03"/>
+            <field name="date_borrowed">2025-12-22</field>
+            <field name="date_expected_return">2026-01-21</field>
+            <field name="fine_per_day">10.0</field>
+            <field name="fine_paid">False</field>
+        </record>
+        
+        <record id="borrowing_21" model="borrowing.records">
+            <field name="member_id" ref="member_04"/>
+            <field name="date_borrowed">2026-01-08</field>
+            <field name="date_expected_return">2026-02-07</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_22" model="borrowing.records">
+            <field name="member_id" ref="member_06"/>
+            <field name="date_borrowed">2026-01-14</field>
+            <field name="date_expected_return">2026-02-13</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_23" model="borrowing.records">
+            <field name="member_id" ref="member_07"/>
+            <field name="date_borrowed">2026-01-11</field>
+            <field name="date_expected_return">2026-02-10</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_24" model="borrowing.records">
+            <field name="member_id" ref="member_10"/>
+            <field name="date_borrowed">2026-01-19</field>
+            <field name="date_expected_return">2026-02-18</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_25" model="borrowing.records">
+            <field name="member_id" ref="member_12"/>
+            <field name="date_borrowed">2026-01-07</field>
+            <field name="date_expected_return">2026-02-06</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_26" model="borrowing.records">
+            <field name="member_id" ref="member_16"/>
+            <field name="date_borrowed">2026-01-23</field>
+            <field name="date_expected_return">2026-02-22</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_27" model="borrowing.records">
+            <field name="member_id" ref="member_17"/>
+            <field name="date_borrowed">2026-01-06</field>
+            <field name="date_expected_return">2026-02-05</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_28" model="borrowing.records">
+            <field name="member_id" ref="member_19"/>
+            <field name="date_borrowed">2026-01-09</field>
+            <field name="date_expected_return">2026-02-08</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_29" model="borrowing.records">
+            <field name="member_id" ref="member_20"/>
+            <field name="date_borrowed">2026-01-13</field>
+            <field name="date_expected_return">2026-02-12</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+        <record id="borrowing_30" model="borrowing.records">
+            <field name="member_id" ref="member_05"/>
+            <field name="date_borrowed">2026-01-21</field>
+            <field name="date_expected_return">2026-02-20</field>
+            <field name="fine_per_day">10.0</field>
+        </record>
+        
+    </data>
+</odoo>

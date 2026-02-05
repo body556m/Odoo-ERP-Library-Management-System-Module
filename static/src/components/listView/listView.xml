@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<templates xml:space="preserve">
+    <t t-name="library.LibraryListView">
+        <div class="library-list-view">
+            <div class="library-header">
+                <div class="library-branding">
+                    <i class="fa fa-book fa-3x library-logo"></i>
+                    <div class="library-title">
+                        <h1 t-esc="'📚 ' + this.title"></h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="library-create-form">
+                <h3><i class="fa fa-plus-circle"></i> Add New Record</h3>
+                <div class="form-row">
+                    <t t-foreach="state.fields" t-as="field" t-key="field.name">
+                        <div t-if="!field.readonly" class="form-group">
+                            <label t-esc="field.label + (field.required ? ' *' : '')"/>
+                            
+                            <input t-if="['char', 'integer', 'float', 'date'].includes(field.type)"
+                                   t-att-type="field.type === 'date' ? 'date' : (['integer', 'float'].includes(field.type) ? 'number' : 'text')"
+                                   class="form-control"
+                                   t-att-step="field.type === 'float' ? '0.01' : '1'"
+                                   t-att-value="state.formData[field.name]"
+                                   t-on-input="(ev) => this.updateFormField(field.name, ev.target.value)"/>
+                            
+                            <select t-if="field.type === 'many2one'"
+                                    class="form-control"
+                                    t-on-change="(ev) => this.updateFormField(field.name, ev.target.value)">
+                                <option value="">Select <t t-esc="field.label"/></option>
+                                <t t-foreach="state.relatedData[field.name] || []" t-as="rel" t-key="rel.id">
+                                    <option t-att-value="rel.id" t-esc="rel.name" t-att-selected="state.formData[field.name] == rel.id"/>
+                                </t>
+                            </select>
+
+                            <select t-if="field.type === 'selection'"
+                                    class="form-control"
+                                    t-on-change="(ev) => this.updateFormField(field.name, ev.target.value)">
+                                <t t-foreach="field.selection || []" t-as="sel" t-key="sel[0]">
+                                    <option t-att-value="sel[0]" t-esc="sel[1]" t-att-selected="state.formData[field.name] == sel[0]"/>
+                                </t>
+                            </select>
+                        </div>
+                    </t>
+                </div>
+                
+                <button class="btn btn-primary btn-create" t-on-click="() => this.createRecord()">
+                    <i class="fa fa-save"></i> Save Record
+                </button>
+            </div>
+            
+            <div class="library-table-container">
+                <h3><i class="fa fa-list"></i> <t t-esc="this.title"/> (<t t-esc="state.records.length"/> records)</h3>
+                
+                <div class="table-responsive">
+                    <table class="library-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <t t-foreach="state.fields" t-as="field" t-key="field.name">
+                                    <th t-esc="field.label"/>
+                                </t>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-if="state.records.length === 0">
+                                <tr>
+                                    <td t-att-colspan="state.fields.length + 2" class="no-data">
+                                        <i class="fa fa-inbox fa-3x"></i>
+                                        <p>No records found. Add your first record above!</p>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-foreach="state.records" t-as="record" t-key="record.id">
+                                <tr class="record-row">
+                                    <td><span class="badge badge-info" t-esc="record.id"/></td>
+                                    <t t-foreach="state.fields" t-as="field" t-key="field.name">
+                                        <td>
+                                            <t t-set="val" t-value="this.getDisplayValue(record, field)"/>
+                                            <span t-if="field.type === 'char' and ['title', 'name'].includes(field.name)" class="book-title" t-esc="val"/>
+                                            <span t-elif="field.type === 'boolean'" t-att-class="'badge ' + (record[field.name] ? 'badge-success' : 'badge-danger')">
+                                                <i t-att-class="'fa ' + (record[field.name] ? 'fa-check' : 'fa-times')"></i> <t t-esc="val"/>
+                                            </span>
+                                            <span t-elif="field.type === 'float'" class="book-price" t-esc="val"/>
+                                            <span t-elif="['integer', 'selection', 'many2one', 'date'].includes(field.type)" class="badge badge-secondary" t-esc="val"/>
+                                            <t t-else="" t-esc="val"/>
+                                        </td>
+                                    </t>
+                                    <td class="actions-cell">
+                                        <button class="btn btn-danger btn-sm btn-delete" 
+                                                t-on-click="() => this.deleteRecord(record.id)"
+                                                title="Delete Record">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

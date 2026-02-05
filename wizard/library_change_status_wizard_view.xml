@@ -1,0 +1,28 @@
+<odoo>
+    <record id="view_library_change_status_wizard_form" model="ir.ui.view">
+        <field name="name">library.change.status.wizard.form</field>
+        <field name="model">library.change.status.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Change Status">
+                <group>
+                    <field name="new_status"/>
+                    <field name="reason"/>
+                </group>
+                <footer>
+                    <button name="action_update_status" string="Update Status" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_library_change_status_wizard" model="ir.actions.act_window">
+        <field name="name">Change Status</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">library.change.status.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_library_books"/>
+        <field name="binding_view_types">list,form</field>
+    </record>
+</odoo>

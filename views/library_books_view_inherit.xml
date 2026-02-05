@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_books_form_inherit" model="ir.ui.view">
+        <field name="name">library.books.form.inherit</field>
+        <field name="model">library.books</field>
+        <field name="inherit_id" ref="library.Books_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[1]" position="before">
+                <button name="check_availability" string="Check Availability" type="object" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

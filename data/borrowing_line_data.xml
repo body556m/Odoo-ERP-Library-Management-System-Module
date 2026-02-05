@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Borrowing Lines for borrowing_01 -->
+        <record id="borrowing_line_01" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_01"/>
+            <field name="book_id" ref="book_pride_prejudice"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_02" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_01"/>
+            <field name="book_id" ref="book_great_gatsby"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_02 -->
+        <record id="borrowing_line_03" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_02"/>
+            <field name="book_id" ref="book_to_kill_mockingbird"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_04" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_02"/>
+            <field name="book_id" ref="book_sapiens"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_05" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_02"/>
+            <field name="book_id" ref="book_kite_runner"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_03 -->
+        <record id="borrowing_line_06" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_03"/>
+            <field name="book_id" ref="book_lord_of_rings"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_07" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_03"/>
+            <field name="book_id" ref="book_harry_potter_stone"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_04 -->
+        <record id="borrowing_line_08" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_04"/>
+            <field name="book_id" ref="book_foundation"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_09" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_04"/>
+            <field name="book_id" ref="book_fahrenheit_451"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_10" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_04"/>
+            <field name="book_id" ref="book_shining"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_05 -->
+        <record id="borrowing_line_11" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_05"/>
+            <field name="book_id" ref="book_alchemist"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_12" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_05"/>
+            <field name="book_id" ref="book_gone_girl"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_06 -->
+        <record id="borrowing_line_13" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_06"/>
+            <field name="book_id" ref="book_game_of_thrones"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_14" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_06"/>
+            <field name="book_id" ref="book_fault_in_our_stars"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_07 -->
+        <record id="borrowing_line_15" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_07"/>
+            <field name="book_id" ref="book_war_and_peace"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_08 -->
+        <record id="borrowing_line_16" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_08"/>
+            <field name="book_id" ref="book_handmaids_tale"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_17" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_08"/>
+            <field name="book_id" ref="book_animal_farm"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_09 -->
+        <record id="borrowing_line_18" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_09"/>
+            <field name="book_id" ref="book_cairo_trilogy"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_19" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_09"/>
+            <field name="book_id" ref="book_yacoubian_building"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_10 -->
+        <record id="borrowing_line_20" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_10"/>
+            <field name="book_id" ref="book_prophet"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_21" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_10"/>
+            <field name="book_id" ref="book_norwegian_wood"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_11 (RETURNED) -->
+        <record id="borrowing_line_22" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_11"/>
+            <field name="book_id" ref="book_american_gods"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2026-01-08</field>
+        </record>
+        
+        <record id="borrowing_line_23" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_11"/>
+            <field name="book_id" ref="book_tipping_point"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2026-01-08</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_12 (RETURNED with overdue) -->
+        <record id="borrowing_line_24" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_12"/>
+            <field name="book_id" ref="book_narnia_lion"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2026-01-20</field>
+        </record>
+        
+        <record id="borrowing_line_25" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_12"/>
+            <field name="book_id" ref="book_sherlock_hound"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2026-01-20</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_13 (RETURNED) -->
+        <record id="borrowing_line_26" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_13"/>
+            <field name="book_id" ref="book_christie_orient"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2026-01-18</field>
+        </record>
+        
+        <record id="borrowing_line_27" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_13"/>
+            <field name="book_id" ref="book_slaughterhouse_five"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2026-01-18</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_14 (RETURNED) -->
+        <record id="borrowing_line_28" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_14"/>
+            <field name="book_id" ref="book_metamorphosis"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2025-12-24</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_15 (RETURNED with overdue) -->
+        <record id="borrowing_line_29" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_15"/>
+            <field name="book_id" ref="book_hundred_years"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2026-01-05</field>
+        </record>
+        
+        <record id="borrowing_line_30" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_15"/>
+            <field name="book_id" ref="book_stranger"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2026-01-05</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_16 (RETURNED) -->
+        <record id="borrowing_line_31" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_16"/>
+            <field name="book_id" ref="book_wuthering_heights"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2025-12-09</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_17 (RETURNED) -->
+        <record id="borrowing_line_32" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_17"/>
+            <field name="book_id" ref="book_picture_dorian"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2026-01-03</field>
+        </record>
+        
+        <record id="borrowing_line_33" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_17"/>
+            <field name="book_id" ref="book_raven"/>
+            <field name="line_state">returned</field>
+            <field name="date_returned_line">2026-01-03</field>
+        </record>
+        
+        <!-- Borrowing Lines for借borrowing_18 (OVERDUE) -->
+        <record id="borrowing_line_34" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_18"/>
+            <field name="book_id" ref="book_days"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_35" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_18"/>
+            <field name="book_id" ref="book_utopia"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_19 (OVERDUE) -->
+        <record id="borrowing_line_36" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_19"/>
+            <field name="book_id" ref="book_woman_point_zero"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_20 (OVERDUE) -->
+        <record id="borrowing_line_37" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_20"/>
+            <field name="book_id" ref="book_cave"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_38" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_20"/>
+            <field name="book_id" ref="book_cheapest_nights"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_21 -->
+        <record id="borrowing_line_39" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_21"/>
+            <field name="book_id" ref="book_bleeding_stone"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_22 -->
+        <record id="borrowing_line_40" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_22"/>
+            <field name="book_id" ref="book_committee"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_41" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_22"/>
+            <field name="book_id" ref="book_tale_two_cities"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_23 -->
+        <record id="borrowing_line_42" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_23"/>
+            <field name="book_id" ref="book_hamlet"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_43" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_23"/>
+            <field name="book_id" ref="book_les_miserables"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_24 -->
+        <record id="borrowing_line_44" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_24"/>
+            <field name="book_id" ref="book_1984"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_45" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_24"/>
+            <field name="book_id" ref="book_crime_punishment"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for borrowing_25 -->
+        <record id="borrowing_line_46" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_25"/>
+            <field name="book_id" ref="book_da_vinci_code"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <!-- Borrowing Lines for remaining borrowings -->
+        <record id="borrowing_line_47" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_26"/>
+            <field name="book_id" ref="book_three_body_problem"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_48" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_27"/>
+            <field name="book_id" ref="book_brave_new_world"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_49" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_28"/>
+            <field name="book_id" ref="book_catcher_in_rye"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+        <record id="borrowing_line_50" model="borrowing.line">
+            <field name="borrowing_id" ref="borrowing_29"/>
+            <field name="book_id" ref="book_names_narrator"/>
+            <field name="line_state">borrowed</field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Borrowing Records Report -->
+    <record id="action_report_borrowing" model="ir.actions.report">
+        <field name="name">Official Borrowing Statement</field>
+        <field name="model">borrowing.records</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">library.report_borrowing_template</field>
+        <field name="binding_model_id" ref="model_borrowing_records"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_borrowing_template">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-family: 'Inter', sans-serif; color: #334155; page-break-after: always;">
+                        <div class="row mb-5 align-items-end" style="border-bottom: 2px solid #3b82f6; padding-bottom: 20px;">
+                            <div class="col-8">
+                                <h1 style="color: #1d4ed8; font-weight: 800; margin: 0; font-size: 2.2rem;">Borrowing Statement</h1>
+                                <p class="mb-0 text-muted">Receipt Ref: <strong t-field="o.name"/></p>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div t-attf-class="badge #{'bg-success' if o.state == 'fully_returned' else 'bg-warning'} p-3" 
+                                     style="font-size: 1.1rem; border-radius: 10px; width: 100%;">
+                                   <p>&#169; <span t-esc="context_timestamp(datetime.datetime.now()).year"/> Library Admin</p>
+                                    <span t-field="o.state" style="text-transform: uppercase;"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 mt-2">
+                            <div class="col-6">
+                                <div style="background: #f1f5f9; padding: 25px; border-radius: 12px; height: 100%;">
+                                    <div class="text-muted small text-uppercase fw-bold mb-3" style="letter-spacing: 1px;">Member Details</div>
+                                    <h4 style="color: #1e1b4b; margin-bottom: 5px;"><span t-field="o.member_id.partner_id.name"/></h4>
+                                    <p class="mb-0 text-muted">Card ID: <span t-field="o.member_id.card_number"/></p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div style="background: #eff6ff; padding: 25px; border-radius: 12px; height: 100%; border-left: 5px solid #3b82f6;">
+                                    <div class="text-muted small text-uppercase fw-bold mb-3" style="letter-spacing: 1px;">Loan Duration</div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Borrowed:</span>
+                                        <strong t-field="o.date_borrowed"/>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Due Date:</span>
+                                        <strong t-field="o.date_expected_return" t-att-class="'text-danger' if o.is_overdue else ''"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <h4 style="color: #1e293b; font-weight: 700; margin-bottom: 20px;">Items on Loan</h4>
+                            <table class="table table-sm" style="border: 1px solid #cbd5e1; border-radius: 10px; overflow: hidden;">
+                                <thead style="background: #2563eb; color: white;">
+                                    <tr>
+                                        <th style="padding: 12px;">Book Title</th>
+                                        <th style="padding: 12px;">ISBN</th>
+                                        <th style="padding: 12px;" class="text-center">Status</th>
+                                        <th style="padding: 12px;" class="text-end">Return Action Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.borrowing_line_ids" t-as="line">
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 10px;"><strong><span t-field="line.book_id.title"/></strong></td>
+                                            <td style="padding: 10px;"><span t-field="line.book_id.isbn"/></td>
+                                            <td style="padding: 10px;" class="text-center">
+                                                <span t-attf-class="badge #{'bg-success' if line.line_state == 'returned' else 'bg-info'}" t-field="line.line_state"/>
+                                            </td>
+                                            <td style="padding: 10px;" class="text-end text-muted">
+                                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%B %d, %Y')"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-8">
+                                <div style="border: 1px dashed #cbd5e1; padding: 15px; border-radius: 8px; font-size: 0.85rem; color: #64748b;">
+                                    <strong>Terms &amp; Conditions:</strong><br/>
+                                    1. Returns must be made before the expected return date to avoid fines.<br/>
+                                    2. Damaged or lost items are subject to full replacement cost.
+                                </div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <div t-if="o.total_fine > 0" style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 12px; padding: 15px;">
+                                    <div class="text-danger small fw-bold text-uppercase">Accumulated Fine</div>
+                                    <h3 class="text-danger" style="font-weight: 800; margin: 5px 0;">
+                                        <span t-field="o.total_fine" t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}'/>
+                                    </h3>
+                                    <div t-if="o.fine_paid" class="badge bg-success">PAID</div>
+                                    <div t-else="" class="badge bg-danger">OUTSTANDING</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Reservations Report -->
+    <record id="action_report_reservations" model="ir.actions.report">
+        <field name="name">Official Reservation Slips</field>
+        <field name="model">library.book.reservation</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">library.report_reservations_template</field>
+        <field name="binding_model_id" ref="model_library_book_reservation"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_reservations_template">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-family: 'Inter', sans-serif; height: 100%; page-break-after: always;">
+                        <div class="row justify-content-center">
+                            <div class="col-10">
+                                <div style="border: 4px solid #10b981; border-radius: 20px; padding: 40px; background: white;">
+                                    <div class="text-center mb-5">
+                                        <h1 style="color: #047857; font-weight: 900; letter-spacing: 5px;">RESERVATION SLIP</h1>
+                                        <p class="text-muted">Booking Reference: <span t-field="o.name" style="font-weight: 700;"/></p>
+                                    </div>
+                                    
+                                    <div class="row g-4 mb-5">
+                                        <div class="col-4 text-center">
+                                            <div style="background: #ecfdf5; padding: 20px; border-radius: 15px;">
+                                                <i class="fa fa-book fa-3x mb-3" style="color: #10b981;"></i><br/>
+                                                <strong style="display: block; margin-top: 10px;">Item Reserved</strong>
+                                                <span t-field="o.book_id.title" style="font-size: 1.1rem; color: #064e3b; font-weight: 600;"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <div style="background: #f0fdf4; padding: 20px; border-radius: 15px;">
+                                                <i class="fa fa-user fa-3x mb-3" style="color: #10b981;"></i><br/>
+                                                <strong style="display: block; margin-top: 10px;">Reserved For</strong>
+                                                <span t-field="o.member_id.partner_id.name" style="font-size: 1.1rem; color: #064e3b; font-weight: 600;"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <div style="background: #f8fafc; padding: 20px; border-radius: 15px; border: 1px solid #10b981;">
+                                                <i class="fa fa-clock-o fa-3x mb-3" style="color: #10b981;"></i><br/>
+                                                <strong style="display: block; margin-top: 10px;">Hold Until</strong>
+                                                <span t-field="o.expiry_date" style="font-size: 1.1rem; color: #064e3b; font-weight: 600;"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-top pt-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <p><strong>Reservation Date:</strong> <span t-field="o.reservation_date"/></p>
+                                                <p t-if="o.notes"><strong>Special Instructions:</strong> <span t-field="o.notes"/></p>
+                                            </div>
+                                            <div class="col-4 text-end">
+                                                <div t-attf-class="badge #{'bg-success' if o.state == 'fulfilled' else 'bg-primary'} p-3" style="font-size: 1.2rem;">
+                                                    <span t-field="o.state"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-5 pt-3 text-center border-top">
+                                        <img t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px" alt="Barcode"/>
+                                        <p class="text-muted small mt-2">Scan at the library counter to release items.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </t>
+        </t>
+    </template>
+</odoo>

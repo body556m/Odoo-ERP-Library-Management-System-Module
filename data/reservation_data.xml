@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Pending Reservations -->
+        <record id="reservation_01" model="library.book.reservation">
+            <field name="member_id" ref="member_01"/>
+            <field name="book_id" ref="book_1984"/>
+            <field name="reservation_date">2026-01-25</field>
+            <field name="expiry_date">2026-02-01</field>
+            <field name="state">pending</field>
+            <field name="notes">Waiting for book to become available</field>
+        </record>
+        
+        <record id="reservation_02" model="library.book.reservation">
+            <field name="member_id" ref="member_03"/>
+            <field name="book_id" ref="book_harry_potter_stone"/>
+            <field name="reservation_date">2026-01-26</field>
+            <field name="expiry_date">2026-02-02</field>
+            <field name="state">pending</field>
+        </record>
+        
+        <record id="reservation_03" model="library.book.reservation">
+            <field name="member_id" ref="member_05"/>
+            <field name="book_id" ref="book_lord_of_rings"/>
+            <field name="reservation_date">2026-01-27</field>
+            <field name="expiry_date">2026-02-03</field>
+            <field name="state">pending</field>
+        </record>
+        
+        <record id="reservation_04" model="library.book.reservation">
+            <field name="member_id" ref="member_07"/>
+            <field name="book_id" ref="book_sapiens"/>
+            <field name="reservation_date">2026-01-28</field>
+            <field name="expiry_date">2026-02-04</field>
+            <field name="state">confirmed</field>
+        </record>
+        
+        <record id="reservation_05" model="library.book.reservation">
+            <field name="member_id" ref="member_09"/>
+            <field name="book_id" ref="book_da_vinci_code"/>
+            <field name="reservation_date">2026-01-29</field>
+            <field name="expiry_date">2026-02-05</field>
+            <field name="state">confirmed</field>
+        </record>
+        
+        <!-- Confirmed Reservations -->
+        <record id="reservation_06" model="library.book.reservation">
+            <field name="member_id" ref="member_02"/>
+            <field name="book_id" ref="book_foundation"/>
+            <field name="reservation_date">2026-01-20</field>
+            <field name="expiry_date">2026-01-27</field>
+            <field name="state">confirmed</field>
+            <field name="notes">Ready for pickup</field>
+        </record>
+        
+        <record id="reservation_07" model="library.book.reservation">
+            <field name="member_id" ref="member_04"/>
+            <field name="book_id" ref="book_game_of_thrones"/>
+            <field name="reservation_date">2026-01-22</field>
+            <field name="expiry_date">2026-01-29</field>
+            <field name="state">confirmed</field>
+        </record>
+        
+        <record id="reservation_08" model="library.book.reservation">
+            <field name="member_id" ref="member_08"/>
+            <field name="book_id" ref="book_alchemist"/>
+            <field name="reservation_date">2026-01-21</field>
+            <field name="expiry_date">2026-01-28</field>
+            <field name="state">confirmed</field>
+        </record>
+        
+        <!-- Fulfilled Reservations -->
+        <record id="reservation_09" model="library.book.reservation">
+            <field name="member_id" ref="member_01"/>
+            <field name="book_id" ref="book_pride_prejudice"/>
+            <field name="reservation_date">2026-01-10</field>
+            <field name="expiry_date">2026-01-17</field>
+            <field name="state">fulfilled</field>
+            <field name="notes">Book borrowed successfully</field>
+        </record>
+        
+        <record id="reservation_10" model="library.book.reservation">
+            <field name="member_id" ref="member_03"/>
+            <field name="book_id" ref="book_to_kill_mockingbird"/>
+            <field name="reservation_date">2026-01-08</field>
+            <field name="expiry_date">2026-01-15</field>
+            <field name="state">fulfilled</field>
+        </record>
+        
+        <record id="reservation_11" model="library.book.reservation">
+            <field name="member_id" ref="member_06"/>
+            <field name="book_id" ref="book_crime_punishment"/>
+            <field name="reservation_date">2026-01-05</field>
+            <field name="expiry_date">2026-01-12</field>
+            <field name="state">fulfilled</field>
+        </record>
+        
+        <record id="reservation_12" model="library.book.reservation">
+            <field name="member_id" ref="member_10"/>
+            <field name="book_id" ref="book_fahrenheit_451"/>
+            <field name="reservation_date">2026-01-12</field>
+            <field name="expiry_date">2026-01-19</field>
+            <field name="state">fulfilled</field>
+        </record>
+        
+        <!-- Cancelled Reservations -->
+        <record id="reservation_13" model="library.book.reservation">
+            <field name="member_id" ref="member_11"/>
+            <field name="book_id" ref="book_shining"/>
+            <field name="reservation_date">2026-01-18</field>
+            <field name="expiry_date">2026-01-25</field>
+            <field name="state">cancelled</field>
+            <field name="notes">Member no longer needs the book</field>
+        </record>
+        
+        <record id="reservation_14" model="library.book.reservation">
+            <field name="member_id" ref="member_13"/>
+            <field name="book_id" ref="book_gone_girl"/>
+            <field name="reservation_date">2026-01-16</field>
+            <field name="expiry_date">2026-01-23</field>
+            <field name="state">cancelled</field>
+        </record>
+        
+        <!-- Expired Reservations -->
+        <record id="reservation_15" model="library.book.reservation">
+            <field name="member_id" ref="member_14"/>
+            <field name="book_id" ref="book_fault_in_our_stars"/>
+            <field name="reservation_date">2025-12-20</field>
+            <field name="expiry_date">2025-12-27</field>
+            <field name="state">expired</field>
+            <field name="notes">Reservation period ended</field>
+        </record>
+        
+        <record id="reservation_16" model="library.book.reservation">
+            <field name="member_id" ref="member_15"/>
+            <field name="book_id" ref="book_war_and_peace"/>
+            <field name="reservation_date">2025-12-15</field>
+            <field name="expiry_date">2025-12-22</field>
+            <field name="state">expired</field>
+        </record>
+        
+        <!-- Additional Reservations -->
+        <record id="reservation_17" model="library.book.reservation">
+            <field name="member_id" ref="member_17"/>
+            <field name="book_id" ref="book_handmaids_tale"/>
+            <field name="reservation_date">2026-01-24</field>
+            <field name="expiry_date">2026-01-31</field>
+            <field name="state">confirmed</field>
+        </record>
+        
+        <record id="reservation_18" model="library.book.reservation">
+            <field name="member_id" ref="member_18"/>
+            <field name="book_id" ref="book_brave_new_world"/>
+            <field name="reservation_date">2026-01-23</field>
+            <field name="expiry_date">2026-01-30</field>
+            <field name="state">pending</field>
+        </record>
+        
+        <record id="reservation_19" model="library.book.reservation">
+            <field name="member_id" ref="member_19"/>
+            <field name="book_id" ref="book_animal_farm"/>
+            <field name="reservation_date">2026-01-15</field>
+            <field name="expiry_date">2026-01-22</field>
+            <field name="state">fulfilled</field>
+        </record>
+        
+        <record id="reservation_20" model="library.book.reservation">
+            <field name="member_id" ref="member_20"/>
+            <field name="book_id" ref="book_cairo_trilogy"/>
+            <field name="reservation_date">2026-01-19</field>
+            <field name="expiry_date">2026-01-26</field>
+            <field name="state">confirmed</field>
+        </record>
+        
+        <record id="reservation_21" model="library.book.reservation">
+            <field name="member_id" ref="member_02"/>
+            <field name="book_id" ref="book_yacoubian_building"/>
+            <field name="reservation_date">2026-01-11</field>
+            <field name="expiry_date">2026-01-18</field>
+            <field name="state">fulfilled</field>
+        </record>
+        
+        <record id="reservation_22" model="library.book.reservation">
+            <field name="member_id" ref="member_04"/>
+            <field name="book_id" ref="book_prophet"/>
+            <field name="reservation_date">2026-01-14</field>
+            <field name="expiry_date">2026-01-21</field>
+            <field name="state">confirmed</field>
+        </record>
+        
+        <record id="reservation_23" model="library.book.reservation">
+            <field name="member_id" ref="member_06"/>
+            <field name="book_id" ref="book_norwegian_wood"/>
+            <field name="reservation_date">2025-12-10</field>
+            <field name="expiry_date">2025-12-17</field>
+            <field name="state">expired</field>
+        </record>
+        
+        <record id="reservation_24" model="library.book.reservation">
+            <field name="member_id" ref="member_08"/>
+            <field name="book_id" ref="book_american_gods"/>
+            <field name="reservation_date">2026-01-17</field>
+            <field name="expiry_date">2026-01-24</field>
+            <field name="state">cancelled</field>
+        </record>
+        
+        <record id="reservation_25" model="library.book.reservation">
+            <field name="member_id" ref="member_10"/>
+            <field name="book_id" ref="book_tipping_point"/>
+            <field name="reservation_date">2026-01-13</field>
+            <field name="expiry_date">2026-01-20</field>
+            <field name="state">fulfilled</field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,88 @@
+<odoo>
+    <record id="books_report" model="ir.actions.report">
+        <field name="name">Library Catalog (PDF)</field>
+        <field name="model">library.books</field>
+        <field name="report_type">qweb-pdf</field> <!-- Changed back to PDF for official use -->
+        <field name="binding_model_id" ref="model_library_books"/>
+        <field name="binding_type">report</field>
+        <field name="report_name">library.report_books_template</field>
+    </record>
+
+    <template id="report_books_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page" style="font-family: 'Inter', sans-serif; color: #334155;">
+                    <!-- Elegant Header -->
+                    <div style="border-bottom: 2px solid #e2e8f0; padding-bottom: 20px; margin-bottom: 30px;">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h1 style="color: #1e293b; font-weight: 800; margin: 0; font-size: 2.5rem;">Official Catalogue</h1>
+                                <p class="text-muted mb-0" style="font-size: 1.1rem;">Comprehensive Library Inventory</p>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div style="background: #f1f5f9; padding: 10px; border-radius: 8px; display: inline-block;">
+                                    <strong style="color: #475569;">Date: </strong>
+                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%B %d, %Y')"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Bar -->
+                    <div class="row mb-4">
+                        <div class="col-3">
+                            <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; text-align: center;">
+                                <div class="text-muted small text-uppercase fw-bold">Total Titles</div>
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #2563eb;" t-esc="len(docs)"/>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px;">
+                                <div class="text-muted small text-uppercase fw-bold">Stock Value</div>
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #0891b2;">
+                                    <span t-esc="sum(docs.mapped('price'))" t-options='{"widget": "monetary", "display_currency": docs.env.company.currency_id}'/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Table -->
+                    <table class="table table-sm table-hover" style="border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0;">
+                        <thead style="background: #f8fafc; border-bottom: 2px solid #e2e8f0;">
+                            <tr style="color: #475569; font-weight: 600;">
+                                <th style="padding: 12px;">ID</th>
+                                <th style="padding: 12px;">Title</th>
+                                <th style="padding: 12px;">Author</th>
+                                <th style="padding: 12px;">Category</th>
+                                <th style="padding: 12px;">ISBN</th>
+                                <th style="padding: 12px;" class="text-center">Stock</th>
+                                <th style="padding: 12px;" class="text-end">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="o">
+                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;">
+                                    <td class="align-middle" style="padding: 10px;"><span t-field="o.id" class="badge bg-light text-dark"/></td>
+                                    <td class="align-middle" style="padding: 10px;"><strong style="color: #1e293b;"><span t-field="o.title"/></strong></td>
+                                    <td class="align-middle" style="padding: 10px;"><span t-field="o.author_id"/></td>
+                                    <td class="align-middle" style="padding: 10px;"><span t-field="o.category_id"/></td>
+                                    <td class="align-middle" style="padding: 10px;"><small class="text-muted" t-field="o.isbn"/></td>
+                                    <td class="align-middle text-center" style="padding: 10px;"><span t-field="o.copies" class="badge bg-info text-white"/></td>
+                                    <td class="align-middle text-end" style="padding: 10px;">
+                                        <span t-field="o.price" t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}'/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <!-- Footer Note -->
+                    <div class="mt-5 pt-4 border-top text-center text-muted small">
+                        <p>This document is an official export of the Library Management System inventory.</p>
+                        <p>&#169; <span t-esc="context_timestamp(datetime.datetime.now()).year"/> Library Admin</p>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

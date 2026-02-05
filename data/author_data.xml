@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Classical Authors -->
+        <record id="author_william_shakespeare" model="library.author">
+            <field name="name">William Shakespeare</field>
+            <field name="date_of_birth">1564-04-26</field>
+        </record>
+        
+        <record id="author_charles_dickens" model="library.author">
+            <field name="name">Charles Dickens</field>
+            <field name="date_of_birth">1812-02-07</field>
+        </record>
+        
+        <record id="author_jane_austen" model="library.author">
+            <field name="name">Jane Austen</field>
+            <field name="date_of_birth">1775-12-16</field>
+        </record>
+        
+        <record id="author_mark_twain" model="library.author">
+            <field name="name">Mark Twain</field>
+            <field name="date_of_birth">1835-11-30</field>
+        </record>
+        
+        <record id="author_leo_tolstoy" model="library.author">
+            <field name="name">Leo Tolstoy</field>
+            <field name="date_of_birth">1828-09-09</field>
+        </record>
+        
+        <record id="author_fyodor_dostoevsky" model="library.author">
+            <field name="name">Fyodor Dostoevsky</field>
+            <field name="date_of_birth">1821-11-11</field>
+        </record>
+        
+        <record id="author_victor_hugo" model="library.author">
+            <field name="name">Victor Hugo</field>
+            <field name="date_of_birth">1802-02-26</field>
+        </record>
+        
+        <record id="author_emily_bronte" model="library.author">
+            <field name="name">Emily Brontë</field>
+            <field name="date_of_birth">1818-07-30</field>
+        </record>
+        
+        <record id="author_oscar_wilde" model="library.author">
+            <field name="name">Oscar Wilde</field>
+            <field name="date_of_birth">1854-10-16</field>
+        </record>
+        
+        <record id="author_edgar_allan_poe" model="library.author">
+            <field name="name">Edgar Allan Poe</field>
+            <field name="date_of_birth">1809-01-19</field>
+        </record>
+        
+        <!-- 20th Century Authors -->
+        <record id="author_george_orwell" model="library.author">
+            <field name="name">George Orwell</field>
+            <field name="date_of_birth">1903-06-25</field>
+        </record>
+        
+        <record id="author_ernest_hemingway" model="library.author">
+            <field name="name">Ernest Hemingway</field>
+            <field name="date_of_birth">1899-07-21</field>
+        </record>
+        
+        <record id="author_franz_kafka" model="library.author">
+            <field name="name">Franz Kafka</field>
+            <field name="date_of_birth">1883-07-03</field>
+        </record>
+        
+        <record id="author_virginia_woolf" model="library.author">
+            <field name="name">Virginia Woolf</field>
+            <field name="date_of_birth">1882-01-25</field>
+        </record>
+        
+        <record id="author_james_joyce" model="library.author">
+            <field name="name">James Joyce</field>
+            <field name="date_of_birth">1882-02-02</field>
+        </record>
+        
+        <record id="author_gabriel_garcia_marquez" model="library.author">
+            <field name="name">Gabriel García Márquez</field>
+            <field name="date_of_birth">1927-03-06</field>
+        </record>
+        
+        <record id="author_albert_camus" model="library.author">
+            <field name="name">Albert Camus</field>
+            <field name="date_of_birth">1913-11-07</field>
+        </record>
+        
+        <record id="author_jrr_tolkien" model="library.author">
+            <field name="name">J.R.R. Tolkien</field>
+            <field name="date_of_birth">1892-01-03</field>
+        </record>
+        
+        <record id="author_cs_lewis" model="library.author">
+            <field name="name">C.S. Lewis</field>
+            <field name="date_of_birth">1898-11-29</field>
+        </record>
+        
+        <record id="author_agatha_christie" model="library.author">
+            <field name="name">Agatha Christie</field>
+            <field name="date_of_birth">1890-09-15</field>
+        </record>
+        
+        <record id="author_arthur_conan_doyle" model="library.author">
+            <field name="name">Arthur Conan Doyle</field>
+            <field name="date_of_birth">1859-05-22</field>
+        </record>
+        
+        <record id="author_ray_bradbury" model="library.author">
+            <field name="name">Ray Bradbury</field>
+            <field name="date_of_birth">1920-08-22</field>
+        </record>
+        
+        <record id="author_isaac_asimov" model="library.author">
+            <field name="name">Isaac Asimov</field>
+            <field name="date_of_birth">1920-01-02</field>
+        </record>
+        
+        <record id="author_kurt_vonnegut" model="library.author">
+            <field name="name">Kurt Vonnegut</field>
+            <field name="date_of_birth">1922-11-11</field>
+        </record>
+        
+        <record id="author_harper_lee" model="library.author">
+            <field name="name">Harper Lee</field>
+            <field name="date_of_birth">1926-04-28</field>
+        </record>
+        
+        <!-- Contemporary Authors -->
+        <record id="author_stephen_king" model="library.author">
+            <field name="name">Stephen King</field>
+            <field name="date_of_birth">1947-09-21</field>
+        </record>
+        
+        <record id="author_jk_rowling" model="library.author">
+            <field name="name">J.K. Rowling</field>
+            <field name="date_of_birth">1965-07-31</field>
+        </record>
+        
+        <record id="author_dan_brown" model="library.author">
+            <field name="name">Dan Brown</field>
+            <field name="date_of_birth">1964-06-22</field>
+        </record>
+        
+        <record id="author_haruki_murakami" model="library.author">
+            <field name="name">Haruki Murakami</field>
+            <field name="date_of_birth">1949-01-12</field>
+        </record>
+        
+        <record id="author_neil_gaiman" model="library.author">
+            <field name="name">Neil Gaiman</field>
+            <field name="date_of_birth">1960-11-10</field>
+        </record>
+        
+        <record id="author_margaret_atwood" model="library.author">
+            <field name="name">Margaret Atwood</field>
+            <field name="date_of_birth">1939-11-18</field>
+        </record>
+        
+        <record id="author_salman_rushdie" model="library.author">
+            <field name="name">Salman Rushdie</field>
+            <field name="date_of_birth">1947-06-19</field>
+        </record>
+        
+        <record id="author_paulo_coelho" model="library.author">
+            <field name="name">Paulo Coelho</field>
+            <field name="date_of_birth">1947-08-24</field>
+        </record>
+        
+        <record id="author_khaled_hosseini" model="library.author">
+            <field name="name">Khaled Hosseini</field>
+            <field name="date_of_birth">1965-03-04</field>
+        </record>
+        
+        <record id="author_chimamanda_adichie" model="library.author">
+            <field name="name">Chimamanda Ngozi Adichie</field>
+            <field name="date_of_birth">1977-09-15</field>
+        </record>
+        
+        <record id="author_yuval_harari" model="library.author">
+            <field name="name">Yuval Noah Harari</field>
+            <field name="date_of_birth">1976-02-24</field>
+        </record>
+        
+        <record id="author_malcolm_gladwell" model="library.author">
+            <field name="name">Malcolm Gladwell</field>
+            <field name="date_of_birth">1963-09-03</field>
+        </record>
+        
+        <record id="author_gillian_flynn" model="library.author">
+            <field name="name">Gillian Flynn</field>
+            <field name="date_of_birth">1971-02-24</field>
+        </record>
+        
+        <record id="author_george_rr_martin" model="library.author">
+            <field name="name">George R.R. Martin</field>
+            <field name="date_of_birth">1948-09-20</field>
+        </record>
+        
+        <record id="author_john_green" model="library.author">
+            <field name="name">John Green</field>
+            <field name="date_of_birth">1977-08-24</field>
+        </record>
+        
+        <!-- Arabic Authors -->
+        <record id="author_naguib_mahfouz" model="library.author">
+            <field name="name">Naguib Mahfouz</field>
+            <field name="date_of_birth">1911-12-11</field>
+        </record>
+        
+        <record id="author_taha_hussein" model="library.author">
+            <field name="name">Taha Hussein</field>
+            <field name="date_of_birth">1889-11-15</field>
+        </record>
+        
+        <record id="author_tawfiq_al_hakim" model="library.author">
+            <field name="name">Tawfiq al-Hakim</field>
+            <field name="date_of_birth">1898-10-09</field>
+        </record>
+        
+        <record id="author_yusuf_idris" model="library.author">
+            <field name="name">Yusuf Idris</field>
+            <field name="date_of_birth">1927-05-19</field>
+        </record>
+        
+        <record id="author_alaa_al_aswany" model="library.author">
+            <field name="name">Alaa Al Aswany</field>
+            <field name="date_of_birth">1957-05-26</field>
+        </record>
+        
+        <record id="author_nawal_el_saadawi" model="library.author">
+            <field name="name">Nawal El Saadawi</field>
+            <field name="date_of_birth">1931-10-27</field>
+        </record>
+        
+        <record id="author_kahlil_gibran" model="library.author">
+            <field name="name">Kahlil Gibran</field>
+            <field name="date_of_birth">1883-01-06</field>
+        </record>
+        
+        <record id="author_ahmed_khaled_tawfik" model="library.author">
+            <field name="name">Ahmed Khaled Tawfik</field>
+            <field name="date_of_birth">1962-06-10</field>
+        </record>
+        
+        <record id="author_ibrahim_al_koni" model="library.author">
+            <field name="name">Ibrahim al-Koni</field>
+            <field name="date_of_birth">1948-07-03</field>
+        </record>
+        
+        <record id="author_sonallah_ibrahim" model="library.author">
+            <field name="name">Sonallah Ibrahim</field>
+            <field name="date_of_birth">1937-01-01</field>
+        </record>
+        
+    </data>
+</odoo>

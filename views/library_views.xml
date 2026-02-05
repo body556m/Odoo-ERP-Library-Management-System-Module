@@ -1,0 +1,111 @@
+<odoo>
+    <menuitem
+    id="library_root_menu"
+    name="Library"
+    web_icon="library,static/description/icon.png"
+    />
+    <menuitem
+    id="books_menu"
+    name="Books"
+    parent="library_root_menu"
+    />
+    <menuitem
+    id="borrowing_recs"
+    name="Borrowing"
+    parent="library_root_menu"
+    />
+
+    <menuitem
+    id="owl_menus"
+    name="OWL Menus"
+    parent="library_root_menu"
+    />
+
+    
+    <record id="action_books_list_view" model="ir.actions.client">
+        <field name="name">Books Management</field>
+        <field name="tag">library.generic_list_view</field>
+        <field name="context">{'active_model': 'library.books'}</field>
+    </record>
+
+    <record id="action_authors_list_view" model="ir.actions.client">
+        <field name="name">Authors Management</field>
+        <field name="tag">library.generic_list_view</field>
+        <field name="context">{'active_model': 'library.author'}</field>
+    </record>
+
+    <record id="action_publishers_list_view" model="ir.actions.client">
+        <field name="name">Publishers Management</field>
+        <field name="tag">library.generic_list_view</field>
+        <field name="context">{'active_model': 'library.publisher'}</field>
+    </record>
+
+    <record id="action_members_list_view" model="ir.actions.client">
+        <field name="name">Members Management</field>
+        <field name="tag">library.generic_list_view</field>
+        <field name="context">{'active_model': 'library.member'}</field>
+    </record>
+
+    <record id="action_reservations_list_view" model="ir.actions.client">
+        <field name="name">Reservations Management</field>
+        <field name="tag">library.generic_list_view</field>
+        <field name="context">{'active_model': 'library.book.reservation'}</field>
+    </record>
+
+    <record id="action_borrowing_list_view" model="ir.actions.client">
+        <field name="name">Borrowing Management</field>
+        <field name="tag">library.generic_list_view</field>
+        <field name="context">{'active_model': 'borrowing.records'}</field>
+    </record>
+
+    <record id="action_library_statistics" model="ir.actions.client">
+        <field name="name">Library Statistics</field>
+        <field name="tag">library.library_statistics</field>
+    </record>
+
+    <menuitem 
+    id="books_list_view_menu" 
+    name="Books List (OWL)" 
+    parent="owl_menus" 
+    action="action_books_list_view" 
+    sequence="10"
+    />
+    <menuitem 
+    id="authors_list_view_menu" 
+    name="Authors List (OWL)" 
+    parent="owl_menus" 
+    action="action_authors_list_view" 
+    sequence="20"
+    />
+    <menuitem 
+    id="publishers_list_view_menu" 
+    name="Publishers List (OWL)" 
+    parent="owl_menus" 
+    action="action_publishers_list_view" 
+    sequence="30"
+    />
+    
+    <menuitem 
+    id="members_list_view_menu" 
+    name="Members List (OWL)" 
+    parent="owl_menus" 
+    action="action_members_list_view" 
+    sequence="15"
+    />
+    
+    <menuitem 
+    id="reservations_list_view_menu" 
+    name="Reservations (OWL)" 
+    parent="owl_menus" 
+    action="action_reservations_list_view" 
+    sequence="10"
+    />
+    
+    <menuitem 
+    id="borrowing_list_view_menu" 
+    name="Borrowing (OWL)" 
+    parent="owl_menus" 
+    action="action_borrowing_list_view" 
+    sequence="20"
+    />
+</odoo>

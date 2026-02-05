@@ -1,0 +1,2211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* library
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-04 12:33+0000\n"
+"PO-Revision-Date: 2026-02-04 12:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: library
+#: model:ir.actions.report,print_report_name:library.action_report_library_member_card
+msgid ""
+"'Card - %s' % (object.card_number) if len(object) == 1 else 'Member Cards'"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__type
+msgid ""
+"- Contact: Use this to organize the contact details of employees of a given company (e.g. CEO, CFO, ...).\n"
+"- Invoice Address: Preferred address for all invoices. Selected by default when you invoice an order that belongs to this company.\n"
+"- Delivery Address: Preferred address for all deliveries. Selected by default when you deliver an order that belongs to this company.\n"
+"- Other: Other address for the company (e.g. subsidiary, ...)"
+msgstr ""
+
+#. module: library
+#: model:mail.template,body_html:library.mail_template_overdue_notification
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-out=\"object.member_id.name or ''\">Member</t>,<br><br>\n"
+"                        The following books borrowed by you are now <strong>OVERDUE</strong>:<br>\n"
+"                        <ul>\n"
+"                            <t t-foreach=\"object.borrowing_line_ids\" t-as=\"line\">\n"
+"                                <li><strong><t t-out=\"line.book_id.title or ''\">Book Title</t></strong></li>\n"
+"                            </t>\n"
+"                        </ul>\n"
+"                        <br>\n"
+"                        Due Date was: <strong><t t-out=\"object.date_expected_return or ''\">Return Date</t></strong>.\n"
+"                        <br>\n"
+"                        Late fees may apply. Please return them immediately.\n"
+"                        <br><br>\n"
+"                        Thank you,<br>\n"
+"                        Library Management Team\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: library
+#: model:mail.template,body_html:library.mail_template_borrowing_confirmation
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-out=\"object.member_id.name or ''\">Member</t>,<br><br>\n"
+"                        This is a confirmation that you have borrowed the following books on <t t-out=\"object.date_borrowed or ''\">Date</t>:<br>\n"
+"                        <ul>\n"
+"                            <t t-foreach=\"object.borrowing_line_ids\" t-as=\"line\">\n"
+"                                <li><strong><t t-out=\"line.book_id.title or ''\">Book Title</t></strong></li>\n"
+"                            </t>\n"
+"                        </ul>\n"
+"                        <br>\n"
+"                        Please return them by <strong><t t-out=\"object.date_expected_return or ''\">Return Date</t></strong> to avoid any late fees.\n"
+"                        <br><br>\n"
+"                        Thank you,<br>\n"
+"                        Library Management Team\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: library
+#: model:mail.template,body_html:library.mail_template_return_reminder
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-out=\"object.member_id.name or ''\">Member</t>,<br><br>\n"
+"                        This is a gentle reminder that the following books are due for return on <strong><t t-out=\"object.date_expected_return or ''\">Return Date</t></strong>:<br>\n"
+"                        <ul>\n"
+"                            <t t-foreach=\"object.borrowing_line_ids\" t-as=\"line\">\n"
+"                                <li><strong><t t-out=\"line.book_id.title or ''\">Book Title</t></strong></li>\n"
+"                            </t>\n"
+"                        </ul>\n"
+"                        <br>\n"
+"                        Please return them on time.\n"
+"                        <br><br>\n"
+"                        Thank you,<br>\n"
+"                        Library Management Team\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid ""
+"<i class=\"fa fa-book fa-3x mb-3\" style=\"color: #10b981;\"/><br/>\n"
+"                                                <strong style=\"display: block; margin-top: 10px;\">Item Reserved</strong>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid ""
+"<i class=\"fa fa-clock-o fa-3x mb-3\" style=\"color: #10b981;\"/><br/>\n"
+"                                                <strong style=\"display: block; margin-top: 10px;\">Hold Until</strong>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid ""
+"<i class=\"fa fa-user fa-3x mb-3\" style=\"color: #10b981;\"/><br/>\n"
+"                                                <strong style=\"display: block; margin-top: 10px;\">Reserved For</strong>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+msgid ""
+"<small class=\"text-muted text-uppercase fw-bold\" style=\"font-size: "
+"0.7rem; letter-spacing: 1px;\">Identifier</small>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+msgid ""
+"<small class=\"text-muted text-uppercase fw-bold\" style=\"font-size: "
+"0.7rem;\">Expires On</small>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+msgid ""
+"<small class=\"text-muted text-uppercase fw-bold\" style=\"font-size: "
+"0.7rem;\">Member Since</small>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.author_form
+msgid "<span class=\"o_stat_text\">Books</span>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "<span>Borrowed:</span>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "<span>Due Date:</span>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid ""
+"<strong class=\"text-muted small text-uppercase d-block mb-1\">Generated "
+"Date</strong>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "<strong style=\"color: #475569;\">Date: </strong>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "<strong>Report Date:</strong><br/>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "<strong>Reservation Date:</strong>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "<strong>Special Instructions:</strong>"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid ""
+"<strong>Terms &amp; Conditions:</strong><br/>\n"
+"                                    1. Returns must be made before the expected return date to avoid fines.<br/>\n"
+"                                    2. Damaged or lost items are subject to full replacement cost."
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "AUTHOR PROFILE"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Accumulated Fine"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_needaction
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_needaction
+#: model:ir.model.fields,field_description:library.field_library_books__message_needaction
+#: model:ir.model.fields,field_description:library.field_library_member__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "Actions"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__active
+#: model:ir.model.fields,field_description:library.field_library_books__active
+#: model:ir.model.fields,field_description:library.field_library_member__active
+#: model:ir.model.fields.selection,name:library.selection__library_member__state__active
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+msgid "Active"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__active_borrowings_count
+msgid "Active Borrowings"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__active_lang_count
+msgid "Active Lang Count"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Active Members"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_ids
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_ids
+#: model:ir.model.fields,field_description:library.field_library_books__activity_ids
+#: model:ir.model.fields,field_description:library.field_library_member__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_exception_decoration
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_exception_decoration
+#: model:ir.model.fields,field_description:library.field_library_books__activity_exception_decoration
+#: model:ir.model.fields,field_description:library.field_library_member__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_state
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_state
+#: model:ir.model.fields,field_description:library.field_library_books__activity_state
+#: model:ir.model.fields,field_description:library.field_library_member__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_type_icon
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_type_icon
+#: model:ir.model.fields,field_description:library.field_library_books__activity_type_icon
+#: model:ir.model.fields,field_description:library.field_library_member__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/library_statistics/library_statistics.xml:0
+#, python-format
+msgid "Add Book"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "Add New Record"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__type
+msgid "Address Type"
+msgstr ""
+
+#. module: library
+#: model:ir.ui.menu,name:library.Borrowing_Records_menu_item
+msgid "All Records"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Archive"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.server,name:library.action_archive_old_returned_loans_ir_actions_server
+msgid "Archive Old Returned Loans"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__archived
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__archived
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Archived"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Are You Sure You Want To Return All Books? This Will End The Record."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_attachment_count
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_attachment_count
+#: model:ir.model.fields,field_description:library.field_library_books__message_attachment_count
+#: model:ir.model.fields,field_description:library.field_library_member__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_author__name
+#: model:ir.model.fields,field_description:library.field_library_books__author_name
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "Author"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_author__date_of_birth
+#: model:ir.model.fields,field_description:library.field_library_books__author_dob
+msgid "Author Birthday"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.author_form
+msgid "Author Info"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.report,name:library.action_report_authors
+msgid "Author Profile Report"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_author__book_ids
+#: model_terms:ir.ui.view,arch_db:library.author_form
+msgid "Authored Books"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__author_id
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Authors"
+msgstr ""
+
+#. module: library
+#: model:ir.ui.menu,name:library.authors_list_view_menu
+msgid "Authors List (OWL)"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.client,name:library.action_authors_list_view
+msgid "Authors Management"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__available
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__available
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__available
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Available"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Available Books"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__avatar_1920
+msgid "Avatar"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__avatar_1024
+msgid "Avatar 1024"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__avatar_128
+msgid "Avatar 128"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__avatar_256
+msgid "Avatar 256"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__avatar_512
+msgid "Avatar 512"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__bank_ids
+msgid "Banks"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__barcode
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "Barcode"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "Birth Date"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__is_blacklisted
+msgid "Blacklist"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__book_id
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+msgid "Book"
+msgstr ""
+
+#. module: library
+#: model:ir.model,name:library.model_borrowing_records
+msgid "Book Borrowing Record"
+msgstr ""
+
+#. module: library
+#: model:ir.model,name:library.model_library_book_category
+msgid "Book Category"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_publisher__book_count
+msgid "Book Count"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Book INFO"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_tree
+msgid "Book Reservations"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__line_state
+msgid "Book Status"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__book_id
+#: model:ir.model.fields,field_description:library.field_library_books__title
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Book Title"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "Booking Reference:"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_category__book_ids
+#: model:ir.model.fields,field_description:library.field_library_publisher__book_ids
+#: model:ir.ui.menu,name:library.books_menu
+#: model_terms:ir.ui.view,arch_db:library.publisher_form
+msgid "Books"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_books_graph
+#: model_terms:ir.ui.view,arch_db:library.view_library_books_pivot
+msgid "Books Analysis"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.act_window,name:library.LibraryBooksAuthors_action
+#: model:ir.ui.menu,name:library.LibraryBooksAuthor_menu_item
+msgid "Books Authors"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.act_window,name:library.LibraryBooks_action
+#: model:ir.ui.menu,name:library.LibraryBooks_menu_item
+msgid "Books Collection"
+msgstr ""
+
+#. module: library
+#: model:ir.ui.menu,name:library.books_list_view_menu
+msgid "Books List (OWL)"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.client,name:library.action_books_list_view
+msgid "Books Management"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.act_window,name:library.LibraryBooksPublisher_action
+#: model:ir.ui.menu,name:library.LibraryBooksPublisher_menu_item
+msgid "Books Publishers"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_line__line_state__borrowed
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__borrowed
+msgid "Borrowed"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__borrowing_line_ids
+msgid "Borrowed Books"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Borrowed Items"
+msgstr ""
+
+#. module: library
+#: model:ir.ui.menu,name:library.borrowing_recs
+msgid "Borrowing"
+msgstr ""
+
+#. module: library
+#: model:ir.ui.menu,name:library.borrowing_list_view_menu
+msgid "Borrowing (OWL)"
+msgstr ""
+
+#. module: library
+#: model:mail.template,subject:library.mail_template_borrowing_confirmation
+msgid "Borrowing Confirmation Ref {{ object.name }}"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.act_window,name:library.action_view_borrowing_history
+#: model:ir.model.fields,field_description:library.field_library_member__borrowing_ids
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Borrowing History"
+msgstr ""
+
+#. module: library
+#: model:ir.model,name:library.model_borrowing_line
+msgid "Borrowing Line"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.client,name:library.action_borrowing_list_view
+msgid "Borrowing Management"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Borrowing Record"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.act_window,name:library.borrowing_records_action
+#: model:ir.model.fields,field_description:library.field_borrowing_line__borrowing_id
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_tree
+msgid "Borrowing Records"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Borrowing Statement"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Borrowings"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__message_bounce
+msgid "Bounce"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_form
+#: model_terms:ir.ui.view,arch_db:library.view_library_change_status_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_book_reservation__state__cancelled
+#: model:ir.model.fields.selection,name:library.selection__library_member__state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Card ID:"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__card_number
+msgid "Card Number"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__category_id
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Category"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_category__name
+msgid "Category Name"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.act_window,name:library.action_library_change_status_wizard
+#: model_terms:ir.ui.view,arch_db:library.view_library_change_status_wizard_form
+msgid "Change Status"
+msgstr ""
+
+#. module: library
+#: model:ir.model,name:library.model_library_change_status_wizard
+msgid "Change Status Wizard"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__channel_ids
+msgid "Channels"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_books_form_inherit
+msgid "Check Availability"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__employee
+msgid "Check this box if this contact is an Employee."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__city
+msgid "City"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__color
+msgid "Color Index"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__commercial_partner_id
+msgid "Commercial Entity"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__company_id
+msgid "Company"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__company_registry
+msgid "Company ID"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__company_name
+msgid "Company Name"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__commercial_company_name
+msgid "Company Name Entity"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__company_type
+msgid "Company Type"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__contact_address
+msgid "Complete Address"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__complete_name
+msgid "Complete Name"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Comprehensive Library Inventory"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_form
+msgid "Confirm"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Confirm Borrowing"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_book_reservation__state__confirmed
+msgid "Confirmed"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__child_ids
+msgid "Contact"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__partner_id
+msgid "Contact Name"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__copies
+msgid "Copies"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_author__book_count
+msgid "Count of Books"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__country_id
+msgid "Country"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__country_code
+msgid "Country Code"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.actions.act_window,help:library.action_library_members
+msgid "Create your first member!"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__create_uid
+#: model:ir.model.fields,field_description:library.field_borrowing_records__create_uid
+#: model:ir.model.fields,field_description:library.field_library_author__create_uid
+#: model:ir.model.fields,field_description:library.field_library_book_category__create_uid
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__create_uid
+#: model:ir.model.fields,field_description:library.field_library_books__create_uid
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__create_uid
+#: model:ir.model.fields,field_description:library.field_library_member__create_uid
+#: model:ir.model.fields,field_description:library.field_library_publisher__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__create_date
+#: model:ir.model.fields,field_description:library.field_borrowing_records__create_date
+#: model:ir.model.fields,field_description:library.field_library_author__create_date
+#: model:ir.model.fields,field_description:library.field_library_book_category__create_date
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__create_date
+#: model:ir.model.fields,field_description:library.field_library_books__create_date
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__create_date
+#: model:ir.model.fields,field_description:library.field_library_member__create_date
+#: model:ir.model.fields,field_description:library.field_library_publisher__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__created_by_user
+msgid "Creator Name"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__currently_borrowed_count
+msgid "Currently Borrowed"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__date
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Date"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__date_borrowed
+msgid "Date Borrowed"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__date_expected_return
+msgid "Date Expected Return"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__date_returned_line
+#: model:ir.model.fields,field_description:library.field_borrowing_records__date_returned
+msgid "Date Returned"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "Delete Record"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_category__description
+#: model:ir.model.fields,field_description:library.field_library_books__description
+msgid "Description"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__description_summary
+msgid "Description Summary"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__display_name
+#: model:ir.model.fields,field_description:library.field_borrowing_records__display_name
+#: model:ir.model.fields,field_description:library.field_library_author__display_name
+#: model:ir.model.fields,field_description:library.field_library_book_category__display_name
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__display_name
+#: model:ir.model.fields,field_description:library.field_library_books__display_name
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__display_name
+#: model:ir.model.fields,field_description:library.field_library_member__display_name
+#: model:ir.model.fields,field_description:library.field_library_publisher__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__draft
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__draft
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__draft
+msgid "Draft"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__edition
+msgid "Edition"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__partner_share
+msgid ""
+"Either customer (not a user), either shared user. Indicated the current "
+"partner is a customer without access or with a limited access created for "
+"sharing data."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__email
+msgid "Email"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__employee
+msgid "Employee"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_tree
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_tree
+msgid "Excel Report"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__4
+msgid "Excellent"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__expired
+#: model:ir.model.fields.selection,name:library.selection__library_book_reservation__state__expired
+#: model:ir.model.fields.selection,name:library.selection__library_member__state__expired
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+msgid "Expired"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Expired Members"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__expiry_date
+#: model:ir.model.fields,field_description:library.field_library_member__membership_expiry_date
+msgid "Expiry Date"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__fine_paid
+msgid "Fine Paid"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__fine_per_day
+msgid "Fine Per Day"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Fines & Penalties"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_follower_ids
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_follower_ids
+#: model:ir.model.fields,field_description:library.field_library_books__message_follower_ids
+#: model:ir.model.fields,field_description:library.field_library_member__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_partner_ids
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_partner_ids
+#: model:ir.model.fields,field_description:library.field_library_books__message_partner_ids
+#: model:ir.model.fields,field_description:library.field_library_member__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__activity_type_icon
+#: model:ir.model.fields,help:library.field_library_book_reservation__activity_type_icon
+#: model:ir.model.fields,help:library.field_library_books__activity_type_icon
+#: model:ir.model.fields,help:library.field_library_member__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__email_formatted
+msgid "Formatted Email"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_book_reservation__state__fulfilled
+msgid "Fulfilled"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Full Return"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__partner_latitude
+msgid "Geo Latitude"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__partner_longitude
+msgid "Geo Longitude"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Group By"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__has_message
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__has_message
+#: model:ir.model.fields,field_description:library.field_library_books__has_message
+#: model:ir.model.fields,field_description:library.field_library_member__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: library
+#: model:ir.module.category,description:library.module_category_library
+msgid "Helps you manage your library."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__2
+msgid "High"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__borrowing_line_ids
+msgid "History of Borrowing"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#: model:ir.model.fields,field_description:library.field_borrowing_line__id
+#: model:ir.model.fields,field_description:library.field_borrowing_records__id
+#: model:ir.model.fields,field_description:library.field_library_author__id
+#: model:ir.model.fields,field_description:library.field_library_book_category__id
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__id
+#: model:ir.model.fields,field_description:library.field_library_books__id
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__id
+#: model:ir.model.fields,field_description:library.field_library_member__id
+#: model:ir.model.fields,field_description:library.field_library_publisher__id
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+#, python-format
+msgid "ID"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__im_status
+msgid "IM Status"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__isbn
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "ISBN"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_exception_icon
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_exception_icon
+#: model:ir.model.fields,field_description:library.field_library_books__activity_exception_icon
+#: model:ir.model.fields,field_description:library.field_library_member__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__activity_exception_icon
+#: model:ir.model.fields,help:library.field_library_book_reservation__activity_exception_icon
+#: model:ir.model.fields,help:library.field_library_books__activity_exception_icon
+#: model:ir.model.fields,help:library.field_library_member__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__message_needaction
+#: model:ir.model.fields,help:library.field_library_book_reservation__message_needaction
+#: model:ir.model.fields,help:library.field_library_books__message_needaction
+#: model:ir.model.fields,help:library.field_library_member__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__message_has_error
+#: model:ir.model.fields,help:library.field_library_book_reservation__message_has_error
+#: model:ir.model.fields,help:library.field_library_books__message_has_error
+#: model:ir.model.fields,help:library.field_library_member__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__is_blacklisted
+msgid ""
+"If the email address is on the blacklist, the contact won't receive mass "
+"mailing anymore, from any list"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__industry_id
+msgid "Industry"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__contact_address_inline
+msgid "Inlined Complete Address"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_books__isbn
+msgid "International Standard Book Number"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_is_follower
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_is_follower
+#: model:ir.model.fields,field_description:library.field_library_books__message_is_follower
+#: model:ir.model.fields,field_description:library.field_library_member__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__is_public
+msgid "Is Public"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__is_company
+msgid "Is a Company"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Items on Loan"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__function
+msgid "Job Position"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__language_id
+#: model:ir.model.fields,field_description:library.field_library_member__lang
+msgid "Language"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__write_uid
+#: model:ir.model.fields,field_description:library.field_borrowing_records__write_uid
+#: model:ir.model.fields,field_description:library.field_library_author__write_uid
+#: model:ir.model.fields,field_description:library.field_library_book_category__write_uid
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__write_uid
+#: model:ir.model.fields,field_description:library.field_library_books__write_uid
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__write_uid
+#: model:ir.model.fields,field_description:library.field_library_member__write_uid
+#: model:ir.model.fields,field_description:library.field_library_publisher__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__write_date
+#: model:ir.model.fields,field_description:library.field_borrowing_records__write_date
+#: model:ir.model.fields,field_description:library.field_library_author__write_date
+#: model:ir.model.fields,field_description:library.field_library_book_category__write_date
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__write_date
+#: model:ir.model.fields,field_description:library.field_library_books__write_date
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__write_date
+#: model:ir.model.fields,field_description:library.field_library_member__write_date
+#: model:ir.model.fields,field_description:library.field_library_publisher__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/library_statistics/library_statistics.xml:0
+#, python-format
+msgid "Last Updated:"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Less 100 Pounds"
+msgstr ""
+
+#. module: library
+#: model:res.groups,name:library.group_library_librarian
+msgid "Librarian"
+msgstr ""
+
+#. module: library
+#: model:ir.module.category,name:library.module_category_library
+#: model:ir.ui.menu,name:library.library_root_menu
+msgid "Library"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+msgid "Library Access"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "Library Admin"
+msgstr ""
+
+#. module: library
+#: model:ir.model,name:library.model_library_author
+msgid "Library Author"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "Library Bibliography"
+msgstr ""
+
+#. module: library
+#: model:ir.model,name:library.model_library_book_reservation
+msgid "Library Book Reservation"
+msgstr ""
+
+#. module: library
+#: model:ir.model,name:library.model_library_books
+msgid "Library Books"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.report,name:library.books_report
+msgid "Library Catalog (PDF)"
+msgstr ""
+
+#. module: library
+#: model:ir.model,name:library.model_library_member
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Library Member"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_tree
+msgid "Library Members"
+msgstr ""
+
+#. module: library
+#: model:ir.model,name:library.model_library_publisher
+msgid "Library Publisher"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/library_statistics/library_statistics.xml:0
+#: model:ir.actions.client,name:library.action_library_statistics
+#, python-format
+msgid "Library Statistics"
+msgstr ""
+
+#. module: library
+#: model:mail.template,name:library.mail_template_borrowing_confirmation
+msgid "Library: Borrowing Confirmation"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.server,name:library.ir_cron_check_overdue_books_ir_actions_server
+msgid "Library: Check Overdue Books"
+msgstr ""
+
+#. module: library
+#: model:mail.template,name:library.mail_template_overdue_notification
+msgid "Library: Overdue Notification"
+msgstr ""
+
+#. module: library
+#: model:mail.template,name:library.mail_template_return_reminder
+msgid "Library: Return Reminder"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.server,name:library.ir_cron_send_return_reminders_ir_actions_server
+msgid "Library: Send Return Reminders"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Loan Duration"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_line__line_state__lost
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__lost
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__lost
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__lost
+msgid "Lost"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__0
+msgid "Low"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__maintenance
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__maintenance
+msgid "Maintenance"
+msgstr ""
+
+#. module: library
+#: model:res.groups,name:library.group_library_manager
+msgid "Manager"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__5
+msgid "Masterpiece"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__max_books_allowed
+msgid "Max Books Allowed"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__member_id
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__member_id
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+msgid "Member"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Member Details"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__member_image
+msgid "Member Image"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.act_window,name:library.action_library_members
+#: model:ir.ui.menu,name:library.menu_library_members
+msgid "Members"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_graph
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_pivot
+msgid "Members Analysis"
+msgstr ""
+
+#. module: library
+#: model:ir.ui.menu,name:library.members_list_view_menu
+msgid "Members List (OWL)"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.client,name:library.action_members_list_view
+msgid "Members Management"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__membership_date
+msgid "Membership Date"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__membership_type
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Membership Type"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_has_error
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_has_error
+#: model:ir.model.fields,field_description:library.field_library_books__message_has_error
+#: model:ir.model.fields,field_description:library.field_library_member__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_ids
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_ids
+#: model:ir.model.fields,field_description:library.field_library_books__message_ids
+#: model:ir.model.fields,field_description:library.field_library_member__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__mobile
+msgid "Mobile"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "More 100 Pounds"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__my_activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__my_activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_books__my_activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_member__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__name
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Name"
+msgstr ""
+
+#. module: library
+#. odoo-python
+#: code:addons/library/lib_models/library_book_reservation.py:0
+#: code:addons/library/lib_models/library_book_reservation.py:0
+#: code:addons/library/lib_models/library_book_reservation.py:0
+#: code:addons/library/lib_models/library_book_reservation.py:0
+#: code:addons/library/lib_models/library_member.py:0
+#: code:addons/library/lib_models/library_member.py:0
+#: code:addons/library/lib_models/library_member.py:0
+#: code:addons/library/lib_models/library_member.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__new_status
+msgid "New Status"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_books__activity_date_deadline
+#: model:ir.model.fields,field_description:library.field_library_member__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_summary
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_summary
+#: model:ir.model.fields,field_description:library.field_library_books__activity_summary
+#: model:ir.model.fields,field_description:library.field_library_member__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_type_id
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_type_id
+#: model:ir.model.fields,field_description:library.field_library_books__activity_type_id
+#: model:ir.model.fields,field_description:library.field_library_member__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "No books recorded for this publisher."
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "No records found. Add your first record above!"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__1
+msgid "Normal"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__email_normalized
+msgid "Normalized Email"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Not Available"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__notes
+#: model:ir.model.fields,field_description:library.field_library_member__comment
+msgid "Notes"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_needaction_counter
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_needaction_counter
+#: model:ir.model.fields,field_description:library.field_library_books__message_needaction_counter
+#: model:ir.model.fields,field_description:library.field_library_member__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__message_has_error_counter
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__message_has_error_counter
+#: model:ir.model.fields,field_description:library.field_library_books__message_has_error_counter
+#: model:ir.model.fields,field_description:library.field_library_member__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__message_needaction_counter
+#: model:ir.model.fields,help:library.field_library_book_reservation__message_needaction_counter
+#: model:ir.model.fields,help:library.field_library_books__message_needaction_counter
+#: model:ir.model.fields,help:library.field_library_member__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__message_has_error_counter
+#: model:ir.model.fields,help:library.field_library_book_reservation__message_has_error_counter
+#: model:ir.model.fields,help:library.field_library_books__message_has_error_counter
+#: model:ir.model.fields,help:library.field_library_member__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "OUTSTANDING"
+msgstr ""
+
+#. module: library
+#: model:ir.ui.menu,name:library.owl_menus
+msgid "OWL Menus"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.report,name:library.action_report_borrowing
+msgid "Official Borrowing Statement"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Official Catalogue"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.report,name:library.action_report_reservations
+msgid "Official Reservation Slips"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__is_overdue
+msgid "Overdue"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "PAID"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "PUBLISHING HOUSE"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__pages
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "Pages"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_line__parent_state
+msgid "Parent State"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__parent_name
+msgid "Parent name"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__partially_returned
+msgid "Partially Returned"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__same_company_registry_partner_id
+msgid "Partner with same Company Registry"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__same_vat_partner_id
+msgid "Partner with same Tax ID"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_book_reservation__state__pending
+msgid "Pending"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__phone
+msgid "Phone"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.report,name:library.action_report_library_member_card
+msgid "Premium Member Card"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__price
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Price"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_member__membership_type__public
+msgid "Public"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__published_date
+msgid "Published Date"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "Published Works"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+msgid "Published Year"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__publisher_id
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Publisher"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.publisher_form
+msgid "Publisher INFO"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.report,name:library.action_report_publishers
+msgid "Publisher Inventory Report"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_publisher__name
+msgid "Publisher Name"
+msgstr ""
+
+#. module: library
+#: model:ir.ui.menu,name:library.publishers_list_view_menu
+msgid "Publishers List (OWL)"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.client,name:library.action_publishers_list_view
+msgid "Publishers Management"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/library_statistics/library_statistics.xml:0
+#, python-format
+msgid "Quick Stats"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "RESERVATION SLIP"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__rating
+msgid "Rating"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_change_status_wizard__reason
+msgid "Reason"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Receipt Ref:"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__name
+msgid "Record Number"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__ref
+msgid "Reference"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__parent_id
+msgid "Related Company"
+msgstr ""
+
+#. module: library
+#: model:mail.template,subject:library.mail_template_return_reminder
+msgid "Reminder: Books Due for Return Ref {{ object.name }}"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Renew Membership"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Rent"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__state__rented
+#: model:ir.model.fields.selection,name:library.selection__library_change_status_wizard__new_status__rented
+msgid "Rented"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_form
+msgid "Reservation"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__reservation_date
+msgid "Reservation Date"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__name
+msgid "Reservation Reference"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.act_window,name:library.action_library_book_reservation
+#: model:ir.ui.menu,name:library.menu_library_reservation
+msgid "Reservations"
+msgstr ""
+
+#. module: library
+#: model:ir.ui.menu,name:library.reservations_list_view_menu
+msgid "Reservations (OWL)"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.client,name:library.action_reservations_list_view
+msgid "Reservations Management"
+msgstr ""
+
+#. module: library
+#: model:ir.actions.server,name:library.action_reset_to_available
+msgid "Reset Available"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__activity_user_id
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__activity_user_id
+#: model:ir.model.fields,field_description:library.field_library_books__activity_user_id
+#: model:ir.model.fields,field_description:library.field_library_member__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.borrowing_records_form
+msgid "Return"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+msgid "Return Action Date"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__borrowing_line__line_state__returned
+#: model:ir.model.fields.selection,name:library.selection__borrowing_records__state__fully_returned
+msgid "Returned"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Returns"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__user_id
+msgid "Salesperson"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "Save Record"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_reservations_template
+msgid "Scan at the library counter to release items."
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Search Members"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+msgid "Search Reservations"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_member_card
+msgid "Secured Library Auth System"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "Select"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__self
+msgid "Self"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__sequence_name
+msgid "Sequence Name"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__partner_share
+msgid "Share Partner"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__shelf_location
+msgid "Shelf Location"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__signup_expiration
+msgid "Signup Expiration"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__signup_token
+msgid "Signup Token"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__signup_type
+msgid "Signup Token Type"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__signup_valid
+msgid "Signup Token is Valid"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__signup_url
+msgid "Signup URL"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_member__membership_type__staff
+msgid "Staff"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__starred_message_ids
+msgid "Starred Message"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__state
+#: model:ir.model.fields,field_description:library.field_library_member__state_id
+msgid "State"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+#: model_terms:ir.ui.view,arch_db:library.Books_tree
+msgid "Statistics"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__state
+#: model:ir.model.fields,field_description:library.field_library_book_reservation__state
+#: model:ir.model.fields,field_description:library.field_library_member__state
+#: model_terms:ir.ui.view,arch_db:library.report_borrowing_template
+#: model_terms:ir.ui.view,arch_db:library.view_library_book_reservation_search
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Status"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__activity_state
+#: model:ir.model.fields,help:library.field_library_book_reservation__activity_state
+#: model:ir.model.fields,help:library.field_library_books__activity_state
+#: model:ir.model.fields,help:library.field_library_member__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Stock"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Stock Value"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__street
+msgid "Street"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__street2
+msgid "Street2"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_member__membership_type__student
+msgid "Student"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Students"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_form
+msgid "Suspend Membership"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_member__state__suspended
+msgid "Suspended"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__category_id
+msgid "Tags"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__vat
+msgid "Tax ID"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_member__membership_type__teacher
+msgid "Teacher"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_search
+msgid "Teachers"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__country_code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__vat
+msgid ""
+"The Tax Identification Number. Values here will be validated based on the "
+"country format. You can use '/' to indicate that the partner is not subject "
+"to tax."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__user_id
+msgid "The internal user in charge of this contact."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_books__pages
+msgid "The number of book pages"
+msgstr ""
+
+#. module: library
+#: model:ir.model.constraint,message:library.constraint_library_books_positive_price
+msgid "The price must be positive."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__company_registry
+msgid ""
+"The registry number of the company. Use it if it is different from the Tax "
+"ID. It must be unique across all partners of a same country"
+msgstr ""
+
+#. module: library
+#: model:ir.model.constraint,message:library.constraint_library_books_unique_isbn
+msgid "This ISBN already exists!"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_authors_template
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid ""
+"This document is an official export from the Library Management System."
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid ""
+"This document is an official export of the Library Management System "
+"inventory."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__email_normalized
+msgid ""
+"This field is used to search on email address as the primary email field can"
+" contain more than strictly an email address."
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__tz
+msgid "Timezone"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__tz_offset
+msgid "Timezone offset"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__title
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "Title"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__total_books_count
+msgid "Total Books Count"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/library_statistics/library_statistics.xml:0
+#, python-format
+msgid "Total Books:"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_form
+msgid "Total Borrowed"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_books__total_borrowed_count
+msgid "Total Borrowed Times"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_member_tree
+msgid "Total Borrowings"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_borrowing_records__total_fine
+msgid "Total Fine"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__total_fines
+msgid "Total Fines"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_books_template
+msgid "Total Titles"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_borrowing_records__activity_exception_decoration
+#: model:ir.model.fields,help:library.field_library_book_reservation__activity_exception_decoration
+#: model:ir.model.fields,help:library.field_library_books__activity_exception_decoration
+#: model:ir.model.fields,help:library.field_library_member__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.Books_search
+msgid "Un Available"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.view_library_change_status_wizard_form
+msgid "Update Status"
+msgstr ""
+
+#. module: library
+#: model:mail.template,subject:library.mail_template_overdue_notification
+msgid "Urgent: Overdue Books Ref {{ object.name }}"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__barcode
+msgid "Use a barcode to identify this contact."
+msgstr ""
+
+#. module: library
+#: model:res.groups,name:library.group_library_user
+msgid "User"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__user_ids
+msgid "Users"
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "Value"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields.selection,name:library.selection__library_books__rating__3
+msgid "Very High"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__website
+msgid "Website Link"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,help:library.field_library_member__tz
+msgid ""
+"When printing documents and exporting/importing data, time values are computed according to this timezone.\n"
+"If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
+"Anywhere else, time values are computed according to the time offset of your web client."
+msgstr ""
+
+#. module: library
+#: model_terms:ir.ui.view,arch_db:library.report_publishers_template
+msgid "Works Portfolio"
+msgstr ""
+
+#. module: library
+#: model:ir.model.fields,field_description:library.field_library_member__zip
+msgid "Zip"
+msgstr ""
+
+#. module: library
+#. odoo-javascript
+#: code:addons/library/static/src/components/listView/listView.xml:0
+#, python-format
+msgid "records)"
+msgstr ""

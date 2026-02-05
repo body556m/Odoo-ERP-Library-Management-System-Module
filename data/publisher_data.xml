@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- International Publishers -->
+        <record id="publisher_penguin_random_house" model="library.publisher">
+            <field name="name">Penguin Random House</field>
+        </record>
+        
+        <record id="publisher_hachette" model="library.publisher">
+            <field name="name">Hachette Book Group</field>
+        </record>
+        
+        <record id="publisher_harpercollins" model="library.publisher">
+            <field name="name">HarperCollins</field>
+        </record>
+        
+        <record id="publisher_simon_schuster" model="library.publisher">
+            <field name="name">Simon &amp; Schuster</field>
+        </record>
+        
+        <record id="publisher_macmillan" model="library.publisher">
+            <field name="name">Macmillan Publishers</field>
+        </record>
+        
+        <record id="publisher_oxford_university_press" model="library.publisher">
+            <field name="name">Oxford University Press</field>
+        </record>
+        
+        <record id="publisher_cambridge_university_press" model="library.publisher">
+            <field name="name">Cambridge University Press</field>
+        </record>
+        
+        <record id="publisher_scholastic" model="library.publisher">
+            <field name="name">Scholastic Corporation</field>
+        </record>
+        
+        <record id="publisher_bloomsbury" model="library.publisher">
+            <field name="name">Bloomsbury Publishing</field>
+        </record>
+        
+        <record id="publisher_faber_faber" model="library.publisher">
+            <field name="name">Faber and Faber</field>
+        </record>
+        
+        <record id="publisher_vintage" model="library.publisher">
+            <field name="name">Vintage Books</field>
+        </record>
+        
+        <record id="publisher_knopf" model="library.publisher">
+            <field name="name">Alfred A. Knopf</field>
+        </record>
+        
+        <record id="publisher_doubleday" model="library.publisher">
+            <field name="name">Doubleday</field>
+        </record>
+        
+        <record id="publisher_crown" model="library.publisher">
+            <field name="name">Crown Publishing Group</field>
+        </record>
+        
+        <record id="publisher_bantam" model="library.publisher">
+            <field name="name">Bantam Books</field>
+        </record>
+        
+        <record id="publisher_del_rey" model="library.publisher">
+            <field name="name">Del Rey Books</field>
+        </record>
+        
+        <record id="publisher_tor" model="library.publisher">
+            <field name="name">Tor Books</field>
+        </record>
+        
+        <record id="publisher_william_morrow" model="library.publisher">
+            <field name="name">William Morrow and Company</field>
+        </record>
+        
+        <record id="publisher_little_brown" model="library.publisher">
+            <field name="name">Little, Brown and Company</field>
+        </record>
+        
+        <record id="publisher_farrar_straus" model="library.publisher">
+            <field name="name">Farrar, Straus and Giroux</field>
+        </record>
+        
+        <record id="publisher_grove_atlantic" model="library.publisher">
+            <field name="name">Grove Atlantic</field>
+        </record>
+        
+        <record id="publisher_new_press" model="library.publisher">
+            <field name="name">The New Press</field>
+        </record>
+        
+        <record id="publisher_yale_university_press" model="library.publisher">
+            <field name="name">Yale University Press</field>
+        </record>
+        
+        <record id="publisher_princeton_university_press" model="library.publisher">
+            <field name="name">Princeton University Press</field>
+        </record>
+        
+        <record id="publisher_mit_press" model="library.publisher">
+            <field name="name">MIT Press</field>
+        </record>
+        
+        <record id="publisher_norton" model="library.publisher">
+            <field name="name">W. W. Norton &amp; Company</field>
+        </record>
+        
+        <record id="publisher_wiley" model="library.publisher">
+            <field name="name">John Wiley &amp; Sons</field>
+        </record>
+        
+        <record id="publisher_pearson" model="library.publisher">
+            <field name="name">Pearson Education</field>
+        </record>
+        
+        <record id="publisher_springer" model="library.publisher">
+            <field name="name">Springer Nature</field>
+        </record>
+        
+        <record id="publisher_elsevier" model="library.publisher">
+            <field name="name">Elsevier</field>
+        </record>
+        
+        <record id="publisher_routledge" model="library.publisher">
+            <field name="name">Routledge</field>
+        </record>
+        
+        <record id="publisher_secker_warburg" model="library.publisher">
+            <field name="name">Secker &amp; Warburg</field>
+        </record>
+        
+        <record id="publisher_jonathan_cape" model="library.publisher">
+            <field name="name">Jonathan Cape</field>
+        </record>
+        
+        <record id="publisher_pimlico" model="library.publisher">
+            <field name="name">Pimlico</field>
+        </record>
+        
+        <record id="publisher_headline" model="library.publisher">
+            <field name="name">Headline Publishing Group</field>
+        </record>
+        
+        <record id="publisher_hodder_stoughton" model="library.publisher">
+            <field name="name">Hodder &amp; Stoughton</field>
+        </record>
+        
+        <record id="publisher_orion" model="library.publisher">
+            <field name="name">Orion Publishing Group</field>
+        </record>
+        
+        <!-- Arabic Publishers -->
+        <record id="publisher_dar_al_shorouk" model="library.publisher">
+            <field name="name">Dar Al-Shorouk</field>
+        </record>
+        
+        <record id="publisher_dar_nahdet_misr" model="library.publisher">
+            <field name="name">Dar Nahdet Misr</field>
+        </record>
+        
+        <record id="publisher_egyptian_general_book" model="library.publisher">
+            <field name="name">Egyptian General Book Organization</field>
+        </record>
+        
+        <record id="publisher_dar_el_hilal" model="library.publisher">
+            <field name="name">Dar El-Hilal</field>
+        </record>
+        
+        <record id="publisher_hindawi" model="library.publisher">
+            <field name="name">Hindawi Foundation</field>
+        </record>
+        
+        <record id="publisher_merit" model="library.publisher">
+            <field name="name">Merit Publishing House</field>
+        </record>
+        
+        <record id="publisher_kotob_khan" model="library.publisher">
+            <field name="name">Kotob Khan</field>
+        </record>
+        
+        <record id="publisher_dar_al_tanweer" model="library.publisher">
+            <field name="name">Dar Al-Tanweer</field>
+        </record>
+        
+        <record id="publisher_dar_al_karma" model="library.publisher">
+            <field name="name">Dar Al-Karma</field>
+        </record>
+        
+        <record id="publisher_saqi_books" model="library.publisher">
+            <field name="name">Saqi Books</field>
+        </record>
+        
+        <record id="publisher_dar_al_adab" model="library.publisher">
+            <field name="name">Dar Al-Adab</field>
+        </record>
+        
+        <record id="publisher_american_university_cairo" model="library.publisher">
+            <field name="name">American University in Cairo Press</field>
+        </record>
+        
+        <record id="publisher_dar_al_saqi" model="library.publisher">
+            <field name="name">Dar Al-Saqi</field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Book 1-10 -->
+        <record id="book_1984" model="library.books">
+            <field name="title">1984</field>
+            <field name="isbn">978-0451524935-DEMO</field>
+            <field name="author_id" ref="author_george_orwell"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">328</field>
+            <field name="price">15.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1949-06-08</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Reprint Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">A-101</field>
+            <field name="description">A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism.</field>
+        </record>
+        
+        <record id="book_pride_prejudice" model="library.books">
+            <field name="title">Pride and Prejudice</field>
+            <field name="isbn">978-0141439518-DEMO</field>
+            <field name="author_id" ref="author_jane_austen"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">432</field>
+            <field name="price">12.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">1813-01-28</field>
+            <field name="category_id" ref="cat_novels"/>
+            <field name="edition">Penguin Classics</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">A-102</field>
+            <field name="description">A romantic novel of manners that follows the character development of Elizabeth Bennet.</field>
+        </record>
+        
+        <record id="book_harry_potter_stone" model="library.books">
+            <field name="title">Harry Potter and the Philosopher's Stone</field>
+            <field name="isbn">978-0747532699-DEMO</field>
+            <field name="author_id" ref="author_jk_rowling"/>
+            <field name="publisher_id" ref="publisher_bloomsbury"/>
+            <field name="pages">223</field>
+            <field name="price">19.99</field>
+            <field name="copies">8</field>
+            <field name="published_date">1997-06-26</field>
+            <field name="category_id" ref="cat_fantasy"/>
+            <field name="edition">First Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">F-001</field>
+            <field name="description">The first novel in the Harry Potter series about a young wizard discovering his magical heritage.</field>
+        </record>
+        
+        <record id="book_to_kill_mockingbird" model="library.books">
+            <field name="title">To Kill a Mockingbird</field>
+            <field name="isbn">978-0061120084-DEMO</field>
+            <field name="author_id" ref="author_harper_lee"/>
+            <field name="publisher_id" ref="publisher_harpercollins"/>
+            <field name="pages">324</field>
+            <field name="price">14.99</field>
+            <field name="copies">6</field>
+            <field name="published_date">1960-07-11</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">50th Anniversary Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">A-103</field>
+            <field name="description">A novel about the serious issues of rape and racial inequality told through the eyes of a child.</field>
+        </record>
+        
+        <record id="book_great_gatsby" model="library.books">
+            <field name="title">The Great Gatsby</field>
+            <field name="isbn">978-0743273565-DB-DEMO</field>
+            <field name="author_id" ref="author_ernest_hemingway"/>
+            <field name="publisher_id" ref="publisher_simon_schuster"/>
+            <field name="pages">180</field>
+            <field name="price">13.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1925-04-10</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Scribner Classic</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-104</field>
+            <field name="description">A portrayal of the Jazz Age in the United States, a time of unprecedented prosperity and cultural dynamism.</field>
+        </record>
+        
+        <record id="book_lord_of_rings" model="library.books">
+            <field name="title">The Lord of the Rings: The Fellowship of the Ring</field>
+            <field name="isbn">978-0544003415-DEMO</field>
+            <field name="author_id" ref="author_jrr_tolkien"/>
+            <field name="publisher_id" ref="publisher_harpercollins"/>
+            <field name="pages">423</field>
+            <field name="price">22.99</field>
+            <field name="copies">7</field>
+            <field name="published_date">1954-07-29</field>
+            <field name="category_id" ref="cat_fantasy"/>
+            <field name="edition">50th Anniversary Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">F-002</field>
+            <field name="description">The first part of J.R.R. Tolkien's epic adventure THE LORD OF THE RINGS.</field>
+        </record>
+        
+        <record id="book_crime_punishment" model="library.books">
+            <field name="title">Crime and Punishment</field>
+            <field name="isbn">978-0486415871-DEMO</field>
+            <field name="author_id" ref="author_fyodor_dostoevsky"/>
+            <field name="publisher_id" ref="publisher_vintage"/>
+            <field name="pages">671</field>
+            <field name="price">16.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">1866-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Dover Thrift Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">A-105</field>
+            <field name="description">A psychological novel about a poor ex-student who kills a pawnbroker for her money.</field>
+        </record>
+        
+        <record id="book_da_vinci_code" model="library.books">
+            <field name="title">The Da Vinci Code</field>
+            <field name="isbn">978-0307474278-DEMO</field>
+            <field name="author_id" ref="author_dan_brown"/>
+            <field name="publisher_id" ref="publisher_doubleday"/>
+            <field name="pages">454</field>
+            <field name="price">18.99</field>
+            <field name="copies">10</field>
+            <field name="published_date">2003-03-18</field>
+            <field name="category_id" ref="cat_mystery"/>
+            <field name="edition">First Edition</field>
+            <field name="rating">3</field>
+            <field name="shelf_location">M-001</field>
+            <field name="description">A mystery thriller that follows symbologist Robert Langdon as he investigates a murder in Paris.</field>
+        </record>
+        
+        <record id="book_sapiens" model="library.books">
+            <field name="title">Sapiens: A Brief History of Humankind</field>
+            <field name="isbn">978-0062316110-DEMO</field>
+            <field name="author_id" ref="author_yuval_harari"/>
+            <field name="publisher_id" ref="publisher_harpercollins"/>
+            <field name="pages">443</field>
+            <field name="price">21.99</field>
+            <field name="copies">6</field>
+            <field name="published_date">2011-01-01</field>
+            <field name="category_id" ref="cat_history"/>
+            <field name="edition">Harper Perennial</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">H-001</field>
+            <field name="description">The book surveys the history of humankind from the evolution of archaic human species.</field>
+        </record>
+        
+        <record id="book_kite_runner" model="library.books">
+            <field name="title">The Kite Runner</field>
+            <field name="isbn">978-1594631931-DEMO</field>
+            <field name="author_id" ref="author_khaled_hosseini"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">371</field>
+            <field name="price">17.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">2003-05-29</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">10th Anniversary Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-106</field>
+            <field name="description">A story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's tumultuous history.</field>
+        </record>
+        
+        <!-- Book 11-20 -->
+        <record id="book_foundation" model="library.books">
+            <field name="title">Foundation</field>
+            <field name="isbn">978-0553293357-DEMO</field>
+            <field name="author_id" ref="author_isaac_asimov"/>
+            <field name="publisher_id" ref="publisher_bantam"/>
+            <field name="pages">255</field>
+            <field name="price">15.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">1951-06-01</field>
+            <field name="category_id" ref="cat_science_fiction"/>
+            <field name="edition">Del Rey Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">SF-001</field>
+            <field name="description">The first novel in Isaac Asimov's classic science fiction trilogy about the fall and rise of civilizations.</field>
+        </record>
+        
+        <record id="book_fahrenheit_451" model="library.books">
+            <field name="title">Fahrenheit 451</field>
+            <field name="isbn">978-1451673319-DEMO</field>
+            <field name="author_id" ref="author_ray_bradbury"/>
+            <field name="publisher_id" ref="publisher_simon_schuster"/>
+            <field name="pages">249</field>
+            <field name="price">14.99</field>
+            <field name="copies">6</field>
+            <field name="published_date">1953-10-19</field>
+            <field name="category_id" ref="cat_science_fiction"/>
+            <field name="edition">60th Anniversary Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">SF-002</field>
+            <field name="description">A dystopian novel depicting a future American society where books are outlawed and burned.</field>
+        </record>
+        
+        <record id="book_shining" model="library.books">
+            <field name="title">The Shining</field>
+            <field name="isbn">978-0307743657-DEMO</field>
+            <field name="author_id" ref="author_stephen_king"/>
+            <field name="publisher_id" ref="publisher_doubleday"/>
+            <field name="pages">447</field>
+            <field name="price">16.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1977-01-28</field>
+            <field name="category_id" ref="cat_horror"/>
+            <field name="edition">Anchor Books Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">HR-001</field>
+            <field name="description">A horror novel about a family's winter stay as caretakers of an isolated hotel.</field>
+        </record>
+        
+        <record id="book_alchemist" model="library.books">
+            <field name="title">The Alchemist</field>
+            <field name="isbn">978-0062315007-DEMO</field>
+            <field name="author_id" ref="author_paulo_coelho"/>
+            <field name="publisher_id" ref="publisher_harpercollins"/>
+            <field name="pages">208</field>
+            <field name="price">14.99</field>
+            <field name="copies">7</field>
+            <field name="published_date">1988-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">25th Anniversary Edition</field>
+            <field name="rating">3</field>
+            <field name="shelf_location">A-107</field>
+            <field name="description">A philosophical novel about a journey to fulfill one's destiny and find one's personal legend.</field>
+        </record>
+        
+        <record id="book_gone_girl" model="library.books">
+            <field name="title">Gone Girl</field>
+            <field name="isbn">978-0307588371-DEMO</field>
+            <field name="author_id" ref="author_gillian_flynn"/>
+            <field name="publisher_id" ref="publisher_crown"/>
+            <field name="pages">432</field>
+            <field name="price">16.99</field>
+            <field name="copies">8</field>
+            <field name="published_date">2012-06-05</field>
+            <field name="category_id" ref="cat_mystery"/>
+            <field name="edition">First Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">M-002</field>
+            <field name="description">A psychological thriller about a husband whose wife mysteriously disappears.</field>
+        </record>
+        
+        <record id="book_game_of_thrones" model="library.books">
+            <field name="title">A Game of Thrones</field>
+            <field name="isbn">978-0553593716-DEMO</field>
+            <field name="author_id" ref="author_george_rr_martin"/>
+            <field name="publisher_id" ref="publisher_bantam"/>
+            <field name="pages">694</field>
+            <field name="price">24.99</field>
+            <field name="copies">9</field>
+            <field name="published_date">1996-08-06</field>
+            <field name="category_id" ref="cat_fantasy"/>
+            <field name="edition">Bantam Spectra Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">F-003</field>
+            <field name="description">The first book in A Song of Ice and Fire series, an epic fantasy of political intrigue and warfare.</field>
+        </record>
+        
+        <record id="book_fault_in_our_stars" model="library.books">
+            <field name="title">The Fault in Our Stars</field>
+            <field name="isbn">978-0142424179-DEMO</field>
+            <field name="author_id" ref="author_john_green"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">313</field>
+            <field name="price">12.99</field>
+            <field name="copies">6</field>
+            <field name="published_date">2012-01-10</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">First Edition</field>
+            <field name="rating">3</field>
+            <field name="shelf_location">A-108</field>
+            <field name="description">A young adult novel about two teenagers who meet and fall in love at a cancer support group.</field>
+        </record>
+        
+        <record id="book_war_and_peace" model="library.books">
+            <field name="title">War and Peace</field>
+            <field name="isbn">978-0143039990-DEMO</field>
+            <field name="author_id" ref="author_leo_tolstoy"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">1296</field>
+            <field name="price">29.99</field>
+            <field name="copies">3</field>
+            <field name="published_date">1869-01-01</field>
+            <field name="category_id" ref="cat_history"/>
+            <field name="edition">Pevear/Volokhonsky Translation</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">H-002</field>
+            <field name="description">An epic novel chronicling the French invasion of Russia and its impact on Tsarist society.</field>
+        </record>
+        
+        <record id="book_handmaids_tale" model="library.books">
+            <field name="title">The Handmaid's Tale</field>
+            <field name="isbn">978-0385490818-DEMO</field>
+            <field name="author_id" ref="author_margaret_atwood"/>
+            <field name="publisher_id" ref="publisher_doubleday"/>
+            <field name="pages">311</field>
+            <field name="price">15.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1985-06-01</field>
+            <field name="category_id" ref="cat_science_fiction"/>
+            <field name="edition">Anchor Books Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">SF-003</field>
+            <field name="description">A dystopian novel set in a totalitarian society where women are subjugated.</field>
+        </record>
+        
+        <record id="book_catcher_in_rye" model="library.books">
+            <field name="title">The Catcher in the Rye</field>
+            <field name="isbn">978-0316769174-DEMO</field>
+            <field name="author_id" ref="author_ernest_hemingway"/>
+            <field name="publisher_id" ref="publisher_little_brown"/>
+            <field name="pages">277</field>
+            <field name="price">13.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">1951-07-16</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Back Bay Books</field>
+            <field name="rating">3</field>
+            <field name="shelf_location">A-109</field>
+            <field name="description">A story about teenage angst and alienation narrated by Holden Caulfield.</field>
+        </record>
+        
+        <!-- Book 21-30 -->
+        <record id="book_brave_new_world" model="library.books">
+            <field name="title">Brave New World</field>
+            <field name="isbn">978-0060850524-DEMO</field>
+            <field name="author_id" ref="author_george_orwell"/>
+            <field name="publisher_id" ref="publisher_harpercollins"/>
+            <field name="pages">268</field>
+            <field name="price">14.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1932-01-01</field>
+            <field name="category_id" ref="cat_science_fiction"/>
+            <field name="edition">Harper Perennial Modern Classics</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">SF-004</field>
+            <field name="description">A dystopian novel set in a futuristic World State of genetically modified citizens.</field>
+        </record>
+        
+        <record id="book_animal_farm" model="library.books">
+            <field name="title">Animal Farm</field>
+            <field name="isbn">978-0451526342-DEMO</field>
+            <field name="author_id" ref="author_george_orwell"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">141</field>
+            <field name="price">11.99</field>
+            <field name="copies">6</field>
+            <field name="published_date">1945-08-17</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Signet Classics</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">A-110</field>
+            <field name="description">An allegorical novella about a group of farm animals who rebel against their human farmer.</field>
+        </record>
+        
+        <record id="book_cairo_trilogy" model="library.books">
+            <field name="title">Palace Walk (The Cairo Trilogy)</field>
+            <field name="isbn">978-0307947109-DEMO</field>
+            <field name="author_id" ref="author_naguib_mahfouz"/>
+            <field name="publisher_id" ref="publisher_dar_al_shorouk"/>
+            <field name="pages">498</field>
+            <field name="price">18.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">1956-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Anchor Books</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">A-201</field>
+            <field name="description">The first volume of the Cairo Trilogy depicting a Muslim family in Cairo during World War I.</field>
+        </record>
+        
+        <record id="book_yacoubian_building" model="library.books">
+            <field name="title">The Yacoubian Building</field>
+            <field name="isbn">978-9770908396-DEMO</field>
+            <field name="author_id" ref="author_alaa_al_aswany"/>
+            <field name="publisher_id" ref="publisher_merit"/>
+            <field name="pages">245</field>
+            <field name="price">15.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">2002-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">First Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-202</field>
+            <field name="description">A novel about the residents of a once-elegant apartment building in downtown Cairo.</field>
+        </record>
+        
+        <record id="book_prophet" model="library.books">
+            <field name="title">The Prophet</field>
+            <field name="isbn">978-0394404288-DEMO</field>
+            <field name="author_id" ref="author_kahlil_gibran"/>
+            <field name="publisher_id" ref="publisher_knopf"/>
+            <field name="pages">107</field>
+            <field name="price">12.99</field>
+            <field name="copies">8</field>
+            <field name="published_date">1923-01-01</field>
+            <field name="category_id" ref="cat_poetry"/>
+            <field name="edition">Vintage International</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">P-001</field>
+            <field name="description">A collection of poetic essays on various aspects of life by a prophet before leaving an island.</field>
+        </record>
+        
+        <record id="book_three_body_problem" model="library.books">
+            <field name="title">The Three-Body Problem</field>
+            <field name="isbn">978-0765382030-DEMO</field>
+            <field name="author_id" ref="author_haruki_murakami"/>
+            <field name="publisher_id" ref="publisher_tor"/>
+            <field name="pages">400</field>
+            <field name="price">17.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">2006-05-01</field>
+            <field name="category_id" ref="cat_science_fiction"/>
+            <field name="edition">Tor Books Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">SF-005</field>
+            <field name="description">A science fiction novel about humanity's first contact with aliens.</field>
+        </record>
+        
+        <record id="book_norwegian_wood" model="library.books">
+            <field name="title">Norwegian Wood</field>
+            <field name="isbn">978-0375704024-DEMO</field>
+            <field name="author_id" ref="author_haruki_murakami"/>
+            <field name="publisher_id" ref="publisher_vintage"/>
+            <field name="pages">296</field>
+            <field name="price">15.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1987-09-04</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Vintage International</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-111</field>
+            <field name="description">A nostalgic story of loss and burgeoning sexuality set in late 1960s Tokyo.</field>
+        </record>
+        
+        <record id="book_american_gods" model="library.books">
+            <field name="title">American Gods</field>
+            <field name="isbn">978-0062572233-DEMO</field>
+            <field name="author_id" ref="author_neil_gaiman"/>
+            <field name="publisher_id" ref="publisher_william_morrow"/>
+            <field name="pages">635</field>
+            <field name="price">19.99</field>
+            <field name="copies">6</field>
+            <field name="published_date">2001-06-19</field>
+            <field name="category_id" ref="cat_fantasy"/>
+            <field name="edition">10th Anniversary Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">F-004</field>
+            <field name="description">A blend of Americana, fantasy, and mythology about old gods versus new gods in modern America.</field>
+        </record>
+        
+        <record id="book_tipping_point" model="library.books">
+            <field name="title">The Tipping Point</field>
+            <field name="isbn">978-0316346627-DEMO</field>
+            <field name="author_id" ref="author_malcolm_gladwell"/>
+            <field name="publisher_id" ref="publisher_little_brown"/>
+            <field name="pages">301</field>
+            <field name="price">17.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">2000-01-01</field>
+            <field name="category_id" ref="cat_non_fiction"/>
+            <field name="edition">Back Bay Books</field>
+            <field name="rating">3</field>
+            <field name="shelf_location">NF-001</field>
+            <field name="description">An analysis of how trends, ideas, and social behaviors spread like viruses.</field>
+        </record>
+        
+        <record id="book_names_narrator" model="library.books">
+            <field name="title">The Woman Who Had Two Navels</field>
+            <field name="isbn">978-9715502443-DEMO</field>
+            <field name="author_id" ref="author_chimamanda_adichie"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">221</field>
+            <field name="price">14.99</field>
+            <field name="copies">3</field>
+            <field name="published_date">2003-05-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">First Edition</field>
+            <field name="rating">3</field>
+            <field name="shelf_location">A-112</field>
+            <field name="description">A contemporary novel exploring identity and belonging.</field>
+        </record>
+        
+        <!-- Book 31-40 -->
+        <record id="book_narnia_lion" model="library.books">
+            <field name="title">The Lion, the Witch and the Wardrobe</field>
+            <field name="isbn">978-0064404990-DEMO</field>
+            <field name="author_id" ref="author_cs_lewis"/>
+            <field name="publisher_id" ref="publisher_harpercollins"/>
+            <field name="pages">206</field>
+            <field name="price">12.99</field>
+            <field name="copies">7</field>
+            <field name="published_date">1950-10-16</field>
+            <field name="category_id" ref="cat_fantasy"/>
+            <field name="edition">HarperTrophy Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">F-005</field>
+            <field name="description">Four adventurous siblings stumble into the world of Narnia in a wardrobe.</field>
+        </record>
+        
+        <record id="book_sherlock_hound" model="library.books">
+            <field name="title">The Hound of the Baskervilles</field>
+            <field name="isbn">978-0486282145-DEMO</field>
+            <field name="author_id" ref="author_arthur_conan_doyle"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">194</field>
+            <field name="price">11.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1902-04-01</field>
+            <field name="category_id" ref="cat_mystery"/>
+            <field name="edition">Dover Thrift Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">M-003</field>
+            <field name="description">Sherlock Holmes investigates a legendary curse on the Baskerville family.</field>
+        </record>
+        
+        <record id="book_christie_orient" model="library.books">
+            <field name="title">Murder on the Orient Express</field>
+            <field name="isbn">978-0062693662-DEMO</field>
+            <field name="author_id" ref="author_agatha_christie"/>
+            <field name="publisher_id" ref="publisher_william_morrow"/>
+            <field name="pages">256</field>
+            <field name="price">13.99</field>
+            <field name="copies">6</field>
+            <field name="published_date">1934-01-01</field>
+            <field name="category_id" ref="cat_mystery"/>
+            <field name="edition">William Morrow Paperbacks</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">M-004</field>
+            <field name="description">Hercule Poirot must solve a murder aboard the legendary Orient Express.</field>
+        </record>
+        
+        <record id="book_slaughterhouse_five" model="library.books">
+            <field name="title">Slaughterhouse-Five</field>
+            <field name="isbn">978-0385333849-DEMO</field>
+            <field name="author_id" ref="author_kurt_vonnegut"/>
+            <field name="publisher_id" ref="publisher_doubleday"/>
+            <field name="pages">275</field>
+            <field name="price">15.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">1969-03-31</field>
+            <field name="category_id" ref="cat_science_fiction"/>
+            <field name="edition">Dial Press Trade Paperback</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">SF-006</field>
+            <field name="description">A satirical time-traveling narrative about Billy Pilgrim's experiences in World War II.</field>
+        </record>
+        
+        <record id="book_metamorphosis" model="library.books">
+            <field name="title">The Metamorphosis</field>
+            <field name="isbn">978-0553213690-DEMO</field>
+            <field name="author_id" ref="author_franz_kafka"/>
+            <field name="publisher_id" ref="publisher_bantam"/>
+            <field name="pages">201</field>
+            <field name="price">10.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1915-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Bantam Classics</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-113</field>
+            <field name="description">A novella about a man who wakes up transformed into a giant insect.</field>
+        </record>
+        
+        <record id="book_hundred_years" model="library.books">
+            <field name="title">One Hundred Years of Solitude</field>
+            <field name="isbn">978-0060883287-DEMO</field>
+            <field name="author_id" ref="author_gabriel_garcia_marquez"/>
+            <field name="publisher_id" ref="publisher_harpercollins"/>
+            <field name="pages">417</field>
+            <field name="price">17.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">1967-05-30</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Harper Perennial Modern Classics</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">A-114</field>
+            <field name="description">A landmark novel that tells the multi-generational story of the Buendía family.</field>
+        </record>
+        
+        <record id="book_stranger" model="library.books">
+            <field name="title">The Stranger</field>
+            <field name="isbn">978-0679720201-DEMO</field>
+            <field name="author_id" ref="author_albert_camus"/>
+            <field name="publisher_id" ref="publisher_vintage"/>
+            <field name="pages">123</field>
+            <field name="price">12.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1942-01-01</field>
+            <field name="category_id" ref="cat_philosophy"/>
+            <field name="edition">Vintage International</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">PH-001</field>
+            <field name="description">A philosophical novel about a man's indifference to life and society's reaction to it.</field>
+        </record>
+        
+        <record id="book_wuthering_heights" model="library.books">
+            <field name="title">Wuthering Heights</field>
+            <field name="isbn">978-0141439556-DEMO</field>
+            <field name="author_id" ref="author_emily_bronte"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">416</field>
+            <field name="price">13.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">1847-12-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Penguin Classics</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-115</field>
+            <field name="description">A gothic romance novel about the intense, almost demonic, love between Catherine and Heathcliff.</field>
+        </record>
+        
+        <record id="book_picture_dorian" model="library.books">
+            <field name="title">The Picture of Dorian Gray</field>
+            <field name="isbn">978-0486278070-DEMO</field>
+            <field name="author_id" ref="author_oscar_wilde"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">254</field>
+            <field name="price">11.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1890-07-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Dover Thrift Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-116</field>
+            <field name="description">A philosophical novel about a man who sells his soul to remain young while his portrait ages.</field>
+        </record>
+        
+        <record id="book_raven" model="library.books">
+            <field name="title">The Raven and Other Poems</field>
+            <field name="isbn">978-0486266855-DEMO</field>
+            <field name="author_id" ref="author_edgar_allan_poe"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">64</field>
+            <field name="price">9.99</field>
+            <field name="copies">6</field>
+            <field name="published_date">1845-01-29</field>
+            <field name="category_id" ref="cat_poetry"/>
+            <field name="edition">Dover Thrift Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">P-002</field>
+            <field name="description">A collection of Poe's most famous poems including The Raven, Annabel Lee, and The Bells.</field>
+        </record>
+        
+        <!-- Book 41-50 -->
+        <record id="book_days" model="library.books">
+            <field name="title">The Days (Al-Ayyam)</field>
+            <field name="isbn">978-9770908358-DEMO</field>
+            <field name="author_id" ref="author_taha_hussein"/>
+            <field name="publisher_id" ref="publisher_egyptian_general_book"/>
+            <field name="pages">342</field>
+            <field name="price">16.99</field>
+            <field name="copies">3</field>
+            <field name="published_date">1929-01-01</field>
+            <field name="category_id" ref="cat_biography"/>
+            <field name="edition">Arabic Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">B-001</field>
+            <field name="description">An autobiographical account of Taha Hussein's childhood and education.</field>
+        </record>
+        
+        <record id="book_utopia" model="library.books">
+            <field name="title">Utopia</field>
+            <field name="isbn">978-9774248726-DEMO</field>
+            <field name="author_id" ref="author_ahmed_khaled_tawfik"/>
+            <field name="publisher_id" ref="publisher_merit"/>
+            <field name="pages">143</field>
+            <field name="price">12.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">2008-01-01</field>
+            <field name="category_id" ref="cat_science_fiction"/>
+            <field name="edition">First Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">SF-007</field>
+            <field name="description">A dystopian novel set in a future Egypt divided between the ultra-rich and the poor.</field>
+        </record>
+        
+        <record id="book_woman_point_zero" model="library.books">
+            <field name="title">Woman at Point Zero</field>
+            <field name="isbn">978-1842777275-DEMO</field>
+            <field name="author_id" ref="author_nawal_el_saadawi"/>
+            <field name="publisher_id" ref="publisher_saqi_books"/>
+            <field name="pages">114</field>
+            <field name="price">14.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">1975-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Zed Books Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-203</field>
+            <field name="description">A powerful novel based on a true story of a woman sentenced to death for killing a pimp.</field>
+        </record>
+        
+        <record id="book_cave" model="library.books">
+            <field name="title">The Cave</field>
+            <field name="isbn">978-9775267344-DEMO</field>
+            <field name="author_id" ref="author_tawfiq_al_hakim"/>
+            <field name="publisher_id" ref="publisher_dar_al_shorouk"/>
+            <field name="pages">189</field>
+            <field name="price">13.99</field>
+            <field name="copies">3</field>
+            <field name="published_date">1933-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Arabic Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-204</field>
+            <field name="description">A modern retelling of Plato's allegory of the cave set in contemporary Egypt.</field>
+        </record>
+        
+        <record id="book_cheapest_nights" model="library.books">
+            <field name="title">The Cheapest Nights</field>
+            <field name="isbn">978-9770914458-DEMO</field>
+            <field name="author_id" ref="author_yusuf_idris"/>
+            <field name="publisher_id" ref="publisher_dar_al_shorouk"/>
+            <field name="pages">227</field>
+            <field name="price">14.99</field>
+            <field name="copies">4</field>
+            <field name="published_date">1954-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Arabic Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-205</field>
+            <field name="description">A collection of short stories about life in rural and urban Egypt.</field>
+        </record>
+        
+        <record id="book_bleeding_stone" model="library.books">
+            <field name="title">The Bleeding of the Stone</field>
+            <field name="isbn">978-1566562638-DEMO</field>
+            <field name="author_id" ref="author_ibrahim_al_koni"/>
+            <field name="publisher_id" ref="publisher_american_university_cairo"/>
+            <field name="pages">218</field>
+            <field name="price">16.99</field>
+            <field name="copies">3</field>
+            <field name="published_date">1990-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">AUC Press Edition</field>
+            <field name="rating">4</field>
+            <field name="shelf_location">A-206</field>
+            <field name="description">A novel set in the Libyan desert about the conflict between a nomad and hunters.</field>
+        </record>
+        
+        <record id="book_committee" model="library.books">
+            <field name="title">The Committee</field>
+            <field name="isbn">978-9773140006-DEMO</field>
+            <field name="author_id" ref="author_sonallah_ibrahim"/>
+            <field name="publisher_id" ref="publisher_american_university_cairo"/>
+            <field name="pages">160</field>
+            <field name="price">15.99</field>
+            <field name="copies">3</field>
+            <field name="published_date">1981-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">AUC Press Edition</field>
+            <field name="rating">3</field>
+            <field name="shelf_location">A-207</field>
+            <field name="description">A satirical novel about Egyptian bureaucracy and surveillance.</field>
+        </record>
+        
+        <record id="book_tale_two_cities" model="library.books">
+            <field name="title">A Tale of Two Cities</field>
+            <field name="isbn">978-0486406510-DEMO</field>
+            <field name="author_id" ref="author_charles_dickens"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">448</field>
+            <field name="price">14.99</field>
+            <field name="copies">5</field>
+            <field name="published_date">1859-04-30</field>
+            <field name="category_id" ref="cat_history"/>
+            <field name="edition">Dover Thrift Edition</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">H-003</field>
+            <field name="description">A historical novel set in London and Paris before and during the French Revolution.</field>
+        </record>
+        
+        <record id="book_hamlet" model="library.books">
+            <field name="title">Hamlet</field>
+            <field name="isbn">978-0743477123-DEMO</field>
+            <field name="author_id" ref="author_william_shakespeare"/>
+            <field name="publisher_id" ref="publisher_simon_schuster"/>
+            <field name="pages">342</field>
+            <field name="price">11.99</field>
+            <field name="copies">6</field>
+            <field name="published_date">1603-01-01</field>
+            <field name="category_id" ref="cat_fiction"/>
+            <field name="edition">Folger Shakespeare Library</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">A-117</field>
+            <field name="description">A tragedy about Prince Hamlet's quest to avenge his father's murder.</field>
+        </record>
+        
+        <record id="book_les_miserables" model="library.books">
+            <field name="title">Les Misérables</field>
+            <field name="isbn">978-0451419439-DEMO</field>
+            <field name="author_id" ref="author_victor_hugo"/>
+            <field name="publisher_id" ref="publisher_penguin_random_house"/>
+            <field name="pages">1463</field>
+            <field name="price">24.99</field>
+            <field name="copies">3</field>
+            <field name="published_date">1862-01-01</field>
+            <field name="category_id" ref="cat_history"/>
+            <field name="edition">Signet Classics</field>
+            <field name="rating">5</field>
+            <field name="shelf_location">H-004</field>
+            <field name="description">An epic historical novel about the struggles of ex-convict Jean Valjean in 19th century France.</field>
+        </record>
+        
+    </data>
+</odoo>

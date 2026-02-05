@@ -1,0 +1,120 @@
+<odoo>
+    <data noupdate="1">
+        <record id="seq_borrowing_records" model="ir.sequence">
+            <field name="name">Borrowing Records Sequence</field>
+            <field name="code">borrowing.records</field>
+            <field name="prefix">BR/%(y)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+
+    <record id="borrowing_records_tree" model="ir.ui.view">
+        <field name="name">borrowing records tree</field>
+        <field name="model">borrowing.records</field>
+        <field name="arch" type="xml">
+            <tree string="Borrowing Records" decoration-danger="is_overdue == True" decoration-muted="state == 'fully_returned'">
+                <header>
+                    <button name="excel_borrowing_report" string="Excel Report" type="object" class="btn-primary"/>
+                </header>
+                <field name="name"/>
+                <field name="member_id"/>
+                <field name="date_borrowed"/>
+                <field name="date_expected_return"/>
+                <field name="total_books_count"/>
+                <field name="total_fine" decoration-danger="total_fine &gt; 0"/>
+                <field name="fine_paid" widget="boolean_toggle" invisible="total_fine == 0"/>
+                <field name="is_overdue" invisible="1"/>
+                <field name="state" widget="badge" decoration-success="state == 'fully_returned'" decoration-info="state == 'borrowed'" decoration-warning="state == 'partially_returned'"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="borrowing_records_form" model="ir.ui.view">
+        <field name="name">borrowing records form</field>
+        <field name="model">borrowing.records</field>
+        <field name="arch" type="xml">
+            <form string="Borrowing Record">
+                <header>
+                    <button name="action_confirm_borrowing" type="object" string="Confirm Borrowing" invisible="state != 'draft'" class="oe_highlight"/>
+                    <button name="action_return_book" type="object" string="Full Return" invisible="state not in ('borrowed', 'partially_returned')" confirm="Are You Sure You Want To Return All Books? This Will End The Record."/>
+                    <button name="excel_borrowing_report" type="object" string="Excel Report" class="btn-primary"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,borrowed,partially_returned,fully_returned"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="member_id"/>
+                            <field name="date_borrowed"/>
+                            <field name="date_expected_return"/>
+                        </group>
+                        <group>
+                            <field name="is_overdue" invisible="is_overdue == False" widget="badge" decoration-warning="is_overdue == True"/>
+                            <field name="date_returned" readonly="1"/>
+                            <field name="total_books_count" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Fines &amp; Penalties" invisible="total_fine == 0">
+                        <group>
+                            <field name="fine_per_day"/>
+                            <field name="total_fine" decoration-danger="total_fine &gt; 0"/>
+                        </group>
+                        <group>
+                             <field name="fine_paid" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Borrowed Items">
+                            <field name="borrowing_line_ids">
+                                <tree editable="bottom">
+                                    <field name="book_id"/>
+                                    <field name="date_returned_line"/>
+                                    <field name="parent_state" invisible="1"/>
+                                    <field name="line_state" widget="badge"/>
+
+                                    <button name="action_return_book_line" type="object" string="Return" icon="fa-check" invisible="line_state in ('returned', 'lost') or parent_state not in ('borrowed', 'partially_returned')"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="action_archive_old_returned_loans" model="ir.cron">
+        <field name="name">Archive Old Returned Loans</field>
+        <field name="model_id" ref="model_borrowing_records"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field name="state">code</field>
+        <field name="code">model.archive_old_returned_loans()</field>
+    </record>
+
+    <record id="borrowing_records_action" model="ir.actions.act_window">
+        <field name="name">Borrowing Records</field>
+        <field name="res_model">borrowing.records</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem 
+        id="Borrowing_Records_menu_item" 
+        name="All Records" 
+        parent="borrowing_recs" 
+        action="borrowing_records_action"
+    />
+</odoo>

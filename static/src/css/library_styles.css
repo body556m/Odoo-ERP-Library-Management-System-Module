@@ -1,0 +1,6 @@
+.o_list_view table.o_list_table thead th {
+    background-color: #8960b8;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}

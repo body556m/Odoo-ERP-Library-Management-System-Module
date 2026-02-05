@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="library.LibraryStatistics" owl="1">
+        <div class="o_library_statistics p-3">
+            <h1>Library Statistics</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Quick Stats</h5>
+                            <p class="card-text">
+                                <strong>Total Books:</strong> <t t-esc="state.booksCount"/>
+                            </p>
+                            <p class="card-text">
+                                <strong>Last Updated:</strong> <t t-esc="state.lastUpdated"/>
+                            </p>
+                            <button class="btn btn-primary" t-on-click="incrementBooks">
+                                Add Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

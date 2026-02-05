@@ -1,0 +1,168 @@
+<odoo>
+    <record id="Books_tree" model="ir.ui.view">
+        <field name="name">Library Books tree</field>
+        <field name="model">library.books</field>
+        <field name="arch" type="xml">
+            <tree>
+                <header>
+                    <button name="action_library_statistics" string="Statistics" type="object" class="btn-secondary"/>
+                    <button name="excel_books_report" string="Excel Report" type="object" class="btn-primary"/>
+                </header>
+                <field name="title"/>
+                <field name="isbn"/>
+                <field name="category_id"/>
+                <field name="publisher_id"/>
+                <field name="author_name"/>
+                <field name="pages"/>
+                <field name="price"/>
+                <field name="copies" optional="1"/>
+                <field name="state"/>
+                <field name="published_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="Books_form" model="ir.ui.view">
+        <field name="name">Library Books form</field>
+        <field name="model">library.books</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" icon="fa-book" type="action" name="%(library.action_view_borrowing_history)d" context="{'default_book_id': active_id, 'search_default_book_id': active_id}">
+                            <field name="total_borrowed_count" widget="statinfo" string="Total Borrowed"/>
+                        </button>
+                    </div>
+                    <field name="active" invisible="1"/>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <widget name="web_ribbon" title="Not Available" bg_color="text-bg-info" invisible="state not in ['sold', 'rented']"/>
+                    <header>
+                        <button name="action_available" string="Confirm" type="object" class="btn-primary" invisible="state != 'draft'"/>
+                        <button name="action_rented" string="Rent" type="object" class="btn-primary" invisible="state != 'available'"/>
+                        <button name="action_available" string="Returns" type="object" class="btn-primary" invisible="state != 'rented'"/>
+                        <button name="action_archive" string="Archive" type="object" class="btn-danger" invisible="state == 'archived'"/>
+                        <button name="action_draft" string="Reset to Draft" type="object" invisible="state != 'archived'"/>
+                        <button name="action_library_statistics" string="Statistics" type="object" class="btn-secondary"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,available,rented,archived"/>
+                    </header>
+                    <label for="sequence_name"/>
+                    <h1>
+                        <field name="sequence_name" readonly="1"/>
+                    </h1>
+                    <div class="Book_title">
+                        <label for="title"/>
+                        <h2>
+                            <field name="title"/>
+                        </h2>
+                    </div>
+                    <group string="Book INFO">
+                        <group>
+                            <field name="isbn"/>
+                            <field name="category_id" context="{'default_description': 'Created from Book'}" readonly="state == 'rented'"/>
+                            <field name="publisher_id" readonly="state == 'rented'"/>
+                            <field name="edition"/>
+                            <field name="language_id"/>
+                        </group>
+                        <group>
+                            <field name="author_id"/>
+                            <field name="author_name"/>
+                            <field name="rating" widget="priority"/>
+                            <field name="shelf_location"/>
+                            <field name="pages"/>
+                            <field name="price" readonly="state == 'rented'"/>
+                            <field name="copies"/>
+                            <field name="published_date"/>
+                            <field name="created_by_user" groups="base.group_user"/>
+                        </group>
+                    </group>
+
+
+                    <notebook>
+                        <page string="Borrowing History">
+                            <field name="borrowing_line_ids">
+                                <tree editable="bottom">
+                                    <field name="borrowing_id"/>
+                                    <field name="date_returned_line"/>
+                                    <field name="line_state"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="Books_search" model="ir.ui.view">
+        <field name="name">Library Books search</field>
+        <field name="model">library.books</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="title"/>
+                <field name="isbn"/>
+                <field name="category_id"/>
+                
+                <filter name="is_available" string="Available" domain="[('available', '=', True)]"/>
+                <filter name="is_not_available" string="Un Available" domain="[('available', '=', False)]"/>
+                <filter name="more_than_100" string="More 100 Pounds" domain="[('price', '&gt;=', 100.00)]"/>
+                <filter name="less_than_100" string="Less 100 Pounds" domain="[('price', '&lt;=', 2000.00)]"/>
+
+                <filter name="Available_group" string="Available Books" context="{'group_by': 'state'}"/>
+                <filter name="group_by_date" string="Date" context="{'group_by':'published_date'}"/>
+                <filter name="group_by_publisher" string="Publisher" context="{'group_by':'publisher_id'}"/>
+                <filter name="group_by_authors" string="Authors" context="{'group_by':'author_id'}"/>
+
+            </search>
+        </field>
+    </record>
+
+    <record id="view_library_books_graph" model="ir.ui.view">
+        <field name="name">library.books.graph</field>
+        <field name="model">library.books</field>
+        <field name="arch" type="xml">
+            <graph string="Books Analysis">
+                <field name="category_id"/>
+                <field name="state"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_library_books_pivot" model="ir.ui.view">
+        <field name="name">library.books.pivot</field>
+        <field name="model">library.books</field>
+        <field name="arch" type="xml">
+            <pivot string="Books Analysis">
+                <field name="category_id" type="row"/>
+                <field name="state" type="col"/>
+                <field name="copies" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="LibraryBooks_action" model="ir.actions.act_window">
+        <field name="name">Books Collection</field>
+        <field name="res_model">library.books</field>
+        <field name="view_mode">tree,form,graph,pivot</field>
+    </record>
+
+    <record id="action_reset_to_available" model="ir.actions.server">
+        <field name="name">Reset Available</field>
+        <field name="model_id" ref="model_library_books"/>
+        <field name="binding_model_id" ref="model_library_books"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records._reset_to_available()
+        </field>
+    </record>
+
+    <menuitem 
+    id="LibraryBooks_menu_item" 
+    name="Books Collection" 
+    parent="books_menu" 
+    action="LibraryBooks_action" />
+</odoo>

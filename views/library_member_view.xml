@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="action_view_borrowing_history" model="ir.actions.act_window">
+        <field name="name">Borrowing History</field>
+        <field name="res_model">borrowing.records</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('member_id', '=', active_id)]</field>
+        <field name="context">{'default_member_id': active_id}</field>
+    </record>
+
+    <record id="view_library_member_kanban" model="ir.ui.view">
+        <field name="name">library.member.kanban</field>
+        <field name="model">library.member</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" sample="1">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="member_image"/>
+                <field name="card_number"/>
+                <field name="membership_type"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <t t-if="record.member_image.raw_value">
+                                <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image:url('#{kanban_image('library.member', 'member_image', record.id.raw_value)}')"/>
+                            </t>
+                            <t t-else="">
+                                <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image:url('/base/static/img/avatar_grey.png')"/>
+                            </t>
+                            
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title"><field name="name"/></strong>
+                                <ul>
+                                    <li><field name="card_number"/></li>
+                                    <li><field name="membership_type"/></li>
+                                    <li>
+                                        <field name="state" widget="label_selection" options="{'classes': {'active': 'success', 'expired': 'warning', 'suspended': 'danger'}}"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_library_member_tree" model="ir.ui.view">
+        <field name="name">library.member.tree</field>
+        <field name="model">library.member</field>
+        <field name="arch" type="xml">
+            <tree string="Library Members" sample="1">
+                <field name="card_number"/>
+                <field name="name"/>
+                <field name="membership_date"/>
+                <field name="membership_expiry_date"/>
+                <field name="membership_type"/>
+                <field name="active_borrowings_count" sum="Total Borrowings"/>
+                <field name="total_fines"/>
+                <field name="state" widget="badge" decoration-success="state == 'active'" decoration-warning="state == 'expired'" decoration-danger="state == 'suspended'"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_library_member_form" model="ir.ui.view">
+        <field name="name">library.member.form</field>
+        <field name="model">library.member</field>
+        <field name="arch" type="xml">
+            <form string="Library Member">
+                <header>
+                    <button name="action_renew_membership" string="Renew Membership" type="object" class="oe_highlight" invisible="state == 'active'"/>
+                    <button name="action_suspend_membership" string="Suspend Membership" type="object" class="btn-danger" invisible="state in ('suspended', 'cancelled')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="active,expired,suspended"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(action_view_borrowing_history)d" type="action" class="oe_stat_button" icon="fa-book">
+                            <field name="active_borrowings_count" widget="statinfo" string="Borrowings"/>
+                        </button>
+                    </div>
+                    <field name="member_image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="card_number"/>
+                        </h1>
+                        <h2>
+                            <field name="partner_id" placeholder="Name" required="1"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="membership_type"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="membership_date"/>
+                            <field name="membership_expiry_date"/>
+                            <field name="max_books_allowed"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Borrowing History" name="borrowing_history">
+                            <field name="borrowing_ids" readonly="1"/>
+                        </page>
+                        <page string="Fines &amp; Penalties" name="fines">
+                            <group>
+                                <field name="total_fines"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_library_member_search" model="ir.ui.view">
+        <field name="name">library.member.search</field>
+        <field name="model">library.member</field>
+        <field name="arch" type="xml">
+            <search string="Search Members">
+                <field name="name"/>
+                <field name="card_number"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <filter string="Active Members" name="active_members" domain="[('state', '=', 'active')]"/>
+                <filter string="Expired Members" name="expired_members" domain="[('state', '=', 'expired')]"/>
+                <filter string="Students" name="students" domain="[('membership_type', '=', 'student')]"/>
+                <filter string="Teachers" name="teachers" domain="[('membership_type', '=', 'teacher')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Membership Type" name="group_type" context="{'group_by': 'membership_type'}"/>
+                    <filter string="Status" name="group_status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_library_member_graph" model="ir.ui.view">
+        <field name="name">library.member.graph</field>
+        <field name="model">library.member</field>
+        <field name="arch" type="xml">
+            <graph string="Members Analysis">
+                <field name="membership_type"/>
+                <field name="state"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_library_member_pivot" model="ir.ui.view">
+        <field name="name">library.member.pivot</field>
+        <field name="model">library.member</field>
+        <field name="arch" type="xml">
+            <pivot string="Members Analysis">
+                <field name="membership_type" type="row"/>
+                <field name="active_borrowings_count" type="measure"/>
+                <field name="total_fines" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_library_members" model="ir.actions.act_window">
+        <field name="name">Members</field>
+        <field name="res_model">library.member</field>
+        <field name="view_mode">kanban,tree,form,graph,pivot</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first member!
+            </p>
+        </field>
+    </record>
+    
+
+
+    <menuitem 
+    id="menu_library_members"
+    name="Members"
+    parent="library_root_menu"
+    action="action_library_members"
+    sequence="20"
+    />
+
+</odoo>
