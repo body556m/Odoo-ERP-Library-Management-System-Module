@@ -117,7 +117,7 @@ class BorrowingRecords(models.Model):
     def excel_borrowing_report(self):
         return {
             'type': 'ir.actions.act_url',
-            'url': f'/library/excel/borrowing/{self.id}',
+            'url': f'/library/excel/borrowing/{self.ids}',
             'target': 'new'
         }
 
