@@ -29,6 +29,7 @@
         'views/library_books_view.xml',
         'views/library_books_view_inherit.xml',
         'views/library_book_reservation_views.xml',
+        'views/library_book_category_view.xml',
         'views/borrowing_rec_view.xml',
         'wizard/library_change_status_wizard_view.xml',
         'reports/books_report.xml',
